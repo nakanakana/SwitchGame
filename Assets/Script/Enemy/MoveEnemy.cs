@@ -89,6 +89,7 @@ public class MoveEnemy : MonoBehaviour
         }
         velocity.y += Physics.gravity.y * Time.deltaTime;
         enemyController.Move(velocity * Time.deltaTime);
+        Debug.Log(state);
     }
 
     //　敵キャラクターの状態変更メソッド

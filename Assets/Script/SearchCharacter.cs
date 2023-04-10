@@ -34,7 +34,7 @@ public class SearchCharacter : MonoBehaviour
             //　サーチする角度内だったら発見
             if (angle <= searchAngle)
             {
-                Debug.Log("主人公発見: " + angle);
+               // Debug.Log("主人公発見: " + angle);
                 moveEnemy.SetState(MoveEnemy.EnemyState.Chase, col.transform);
 
                 transform.LookAt(Player.transform);
