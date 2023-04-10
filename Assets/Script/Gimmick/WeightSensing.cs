@@ -49,12 +49,12 @@ public class WeightSensing : MonoBehaviour
         {
             //audioSource.clip = sound;
             //audioSource.Play();
-            
-            Alert.instance.OnAleart();
             if (!Alert.instance.GetisAlert())
             {
                 foundFlag = true;
             }
+            Alert.instance.OnAleart();
+           
         }
     }
     //void OnCollisionEnter(Collision other)//  ’n–Ê‚ÉG‚ê‚½‚Ìˆ—

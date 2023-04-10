@@ -27,7 +27,7 @@ public class MoveEnemy : MonoBehaviour
     private SetPosition setPosition;
     //@‘Ò‚¿ŠÔ
     [SerializeField]
-    private float waitTime = 5f;
+    private float waitTime = 1f;
     //@Œo‰ßŠÔ
     private float elapsedTime;
     // “G‚Ìó‘Ô
@@ -58,7 +58,7 @@ public class MoveEnemy : MonoBehaviour
             if (state == EnemyState.Chase)
             {
                 setPosition.SetDestination(playerTransform.position);
-                walkSpeed = 2.0f;
+                walkSpeed = 3.0f;
             }
             if (enemyController.isGrounded)
             {
