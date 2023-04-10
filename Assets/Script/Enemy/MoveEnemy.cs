@@ -60,14 +60,15 @@ public class MoveEnemy : MonoBehaviour
                 setPosition.SetDestination(playerTransform.position);
                 walkSpeed = 3.0f;
             }
-            if (enemyController.isGrounded)
-            {
+            Debug.Log(enemyController.isGrounded);
+            //if (enemyController.isGrounded)
+            //{
                 velocity = Vector3.zero;
                 animator.SetFloat("Speed", 2.0f);
                 direction = (setPosition.GetDestination() - transform.position).normalized;
                 transform.LookAt(new Vector3(setPosition.GetDestination().x, transform.position.y, setPosition.GetDestination().z));
                 velocity = direction * walkSpeed;
-            }
+           // }
 
             //　目的地に到着したかどうかの判定
             if (Vector3.Distance(transform.position, setPosition.GetDestination()) < 0.5f)
@@ -89,6 +90,7 @@ public class MoveEnemy : MonoBehaviour
         }
         velocity.y += Physics.gravity.y * Time.deltaTime;
         enemyController.Move(velocity * Time.deltaTime);
+       
     }
 
     //　敵キャラクターの状態変更メソッド
@@ -97,7 +99,7 @@ public class MoveEnemy : MonoBehaviour
         if (tempState == EnemyState.Walk)
         {
             arrived = false;
-            elapsedTime = 0f;
+            elapsedTime = 0.0f;
             state = tempState;
             setPosition.CreateRandomPosition();
         }
