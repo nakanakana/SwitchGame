@@ -16,12 +16,18 @@ public class MoveControl : MonoBehaviour
     float inputHorizontal = 0;
     float inputVertical = 0;
 
-    //[SerializeField]
-    //private GameObject parentObj;
+    //add
+    //{
+    //public int lifecount = 0;
+    //public int GetLife() { return lifecount; }
+    //}
 
-    //[SerializeField]
-    //private GameObject parentObj_;
-    private bool Grounded;//  地面に着地しているか判定する変数
+//[SerializeField]
+//private GameObject parentObj;
+
+//[SerializeField]
+//private GameObject parentObj_;
+private bool Grounded;//  地面に着地しているか判定する変数
     private float Jumppower;//  ジャンプ力
 
     private void FixedUpdate()
@@ -33,6 +39,10 @@ public class MoveControl : MonoBehaviour
     {
         Jumppower = 0.0f;
         rb = GetComponent<Rigidbody>();
+
+        //add
+        //lifecount = 1;
+
         //Debug.Assert(parentObj != null);
         //Debug.Assert(parentObj_ != null);
     }
