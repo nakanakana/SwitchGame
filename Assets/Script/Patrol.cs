@@ -66,7 +66,7 @@ public class Patrol : MonoBehaviour
         //　敵の前方からの主人公の方向
         var angle = Vector3.Angle(transform.forward, playerDirection);
 
-        if (tracking && angle <= searchAngle && !Alert.instance.GetisAlert())
+        if (tracking && angle <= searchAngle)
         {
             //追跡の時、quitRangeより距離が離れたら中止
             if (distance > quitRange)
@@ -81,7 +81,7 @@ public class Patrol : MonoBehaviour
         else
         {
             //PlayerがtrackingRangeより近づいたら追跡開始
-            if (distance < trackingRange && angle <= searchAngle && !Alert.instance.GetisAlert())
+            if (distance < trackingRange && angle <= searchAngle)
                 tracking = true;
 
 
@@ -93,6 +93,7 @@ public class Patrol : MonoBehaviour
 
         if(Alert.instance.GetisAlert() && !tracking)
         {
+
             agent.destination = AlertPoint.position;
             if (distance < trackingRange && angle <= searchAngle)
                 tracking = true;
