@@ -19,6 +19,11 @@ public class Patrol : MonoBehaviour
     [SerializeField] float trackingRange = 3f;
     [SerializeField] float quitRange = 5f;
     [SerializeField] bool tracking = false;
+    [SerializeField]
+    private float searchAngle = 100f;
+
+    public Transform AlertPoint;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -33,7 +38,7 @@ public class Patrol : MonoBehaviour
         //追跡したいオブジェクトの名前を入れる
         player = GameObject.Find("Player");
     }
-
+    
 
     void GotoNextPoint()
     {
@@ -56,9 +61,12 @@ public class Patrol : MonoBehaviour
         //Playerとこのオブジェクトの距離を測る
         playerPos = player.transform.position;
         distance = Vector3.Distance(this.transform.position, playerPos);
+        //　主人公の方向
+        var playerDirection = player.transform.position - transform.position;
+        //　敵の前方からの主人公の方向
+        var angle = Vector3.Angle(transform.forward, playerDirection);
 
-
-        if (tracking)
+        if (tracking && angle <= searchAngle)
         {
             //追跡の時、quitRangeより距離が離れたら中止
             if (distance > quitRange)
@@ -73,7 +81,7 @@ public class Patrol : MonoBehaviour
         else
         {
             //PlayerがtrackingRangeより近づいたら追跡開始
-            if (distance < trackingRange)
+            if (distance < trackingRange && angle <= searchAngle)
                 tracking = true;
 
 
@@ -81,6 +89,15 @@ public class Patrol : MonoBehaviour
             // 次の目標地点を選択します
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
+        }
+
+        if(Alert.instance.GetisAlert() && !tracking)
+        {
+
+            agent.destination = AlertPoint.position;
+            if (distance < trackingRange && angle <= searchAngle)
+                tracking = true;
+            if(agent.destination == AlertPoint.position && tracking == false) { GotoNextPoint(); } 
         }
     }
 
