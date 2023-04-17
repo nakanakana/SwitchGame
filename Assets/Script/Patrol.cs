@@ -22,7 +22,8 @@ public class Patrol : MonoBehaviour
     [SerializeField]
     private float searchAngle = 100f;
 
-    public Transform AlertPoint;
+    public Transform LinePoint;
+    public Transform WeightPoint;
 
     void Start()
     {
@@ -93,11 +94,10 @@ public class Patrol : MonoBehaviour
 
         if(Alert.instance.GetisAlert() && !tracking)
         {
-
-            agent.destination = AlertPoint.position;
+            agent.destination = LinePoint.position;
             if (distance < trackingRange && angle <= searchAngle)
                 tracking = true;
-            if(agent.destination == AlertPoint.position && tracking == false) { GotoNextPoint(); } 
+            if(agent.destination == LinePoint.position && tracking == false) { GotoNextPoint(); } 
         }
     }
 
