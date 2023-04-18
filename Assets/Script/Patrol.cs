@@ -22,8 +22,6 @@ public class Patrol : MonoBehaviour
     [SerializeField]
     private float searchAngle = 100f;
 
-    public Transform LinePoint;
-    public Transform WeightPoint;
 
     void Start()
     {
@@ -92,15 +90,15 @@ public class Patrol : MonoBehaviour
                 GotoNextPoint();
         }
 
-        if(Alert.instance.GetisAlert() && !tracking)
-        {
-            agent.destination = LinePoint.position;
-            if (distance < trackingRange && angle <= searchAngle)
-                tracking = true;
-            if(agent.destination == LinePoint.position && tracking == false) { GotoNextPoint(); } 
-        }
+        
     }
-
+    public void AlertCome(Transform alertpos)
+    {
+        agent.destination = alertpos.position;
+        if (distance < trackingRange)
+            tracking = true;
+        if (agent.destination == alertpos.position && tracking == false) { GotoNextPoint(); }
+    }
     void OnDrawGizmosSelected()
     {
         //trackingRangeの範囲を赤いワイヤーフレームで示す
