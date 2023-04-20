@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //NavMeshAgent使うときに必要
 using UnityEngine.AI;
+using UnityEditor;
 
 //オブジェクトにNavMeshAgentコンポーネントを設置
 [RequireComponent(typeof(NavMeshAgent))]
@@ -108,5 +109,12 @@ public class Patrol : MonoBehaviour
         //quitRangeの範囲を青いワイヤーフレームで示す
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, quitRange);
+
     }
+    private void OnDrawGizmos()
+    {
+        Handles.color = Color.red;
+        Handles.DrawSolidArc(transform.position, Vector3.up, Quaternion.Euler(0f, -searchAngle, 0f) * transform.forward, searchAngle * 2f, trackingRange);
+    }
+
 }
