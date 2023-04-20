@@ -42,13 +42,7 @@ public class WeightSensing : MonoBehaviour
         //    patrol_04 = enemy_01.GetComponentInChildren<Patrol>();
         //}
 
-        for (int i = 0; i < enemy.Length; ++i)
-        {
-            if (enemy[i] != null)
-            {
-
-            }
-        }
+       
         
         mesh = GetComponent<MeshRenderer>();
         if (mesh.enabled)
@@ -66,7 +60,7 @@ public class WeightSensing : MonoBehaviour
         {
             foundFlag = false;
             countTime = 0.0f;
-            Alert.instance.ReleaseAleart();
+            //Alert.instance.ReleaseAleart();
             // FlushController.instance.flushClear();
             // audioSource.Stop();
             
@@ -94,11 +88,9 @@ public class WeightSensing : MonoBehaviour
         {
             //audioSource.clip = sound;
             //audioSource.Play();
-           
-            if (!Alert.instance.GetisAlert())
-            {
-                foundFlag = true;
-            }
+          
+            foundFlag = true;
+            
             //Alert.instance.OnAleart();
            
 
@@ -128,6 +120,7 @@ public class WeightSensing : MonoBehaviour
         //{
         //    patrol_04.AlertCome(this.transform);
         //}
+
         for (int i = 0; i < enemy.Length; ++i)
         {
             if (enemy[i] != null)
