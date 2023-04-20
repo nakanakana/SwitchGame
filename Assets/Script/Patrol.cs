@@ -113,7 +113,7 @@ public class Patrol : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Handles.color = Color.red;
+        Handles.color = new Color(1f, 0, 0, 0.2f);
         Handles.DrawSolidArc(transform.position, Vector3.up, Quaternion.Euler(0f, -searchAngle, 0f) * transform.forward, searchAngle * 2f, trackingRange);
     }
 
