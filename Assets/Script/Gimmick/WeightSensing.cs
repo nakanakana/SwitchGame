@@ -6,37 +6,54 @@ public class WeightSensing : MonoBehaviour
 {
     private AudioSource audioSource;
     public AudioClip sound;
+    private MeshRenderer mesh;
     private bool foundFlag = false;
     private float countTime = 0.0f;
-    public GameObject enemy_01;
-    public GameObject enemy_02;
-    public GameObject enemy_03;
-    public GameObject enemy_04;
-    private Patrol patrol_01;
-    private Patrol patrol_02;
-    private Patrol patrol_03;
-    private Patrol patrol_04;
+
+    [Header("—ˆ‚Ä‚Ù‚µ‚¢“G‚ðƒZƒbƒg")]
+    public GameObject[] enemy;
+    //public GameObject enemy_02;
+    //public GameObject enemy_03;
+    //public GameObject enemy_04;
+
+
+   
 
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (enemy_01 != null)
+
+        //if (enemy_01 != null)
+        //{
+        //    patrol_01 = enemy_01.GetComponentInChildren<Patrol>();
+        //}
+        //if (enemy_02 != null)
+        //{
+        //    patrol_02 = enemy_02.GetComponentInChildren<Patrol>();
+        //}
+        //if (enemy_03 != null)
+        //{
+        //    patrol_03 = enemy_01.GetComponentInChildren<Patrol>();
+        //}
+        //if (enemy_04 != null)
+        //{
+        //    patrol_04 = enemy_01.GetComponentInChildren<Patrol>();
+        //}
+
+        for (int i = 0; i < enemy.Length; ++i)
         {
-            patrol_01 = enemy_01.GetComponentInChildren<Patrol>();
+            if (enemy[i] != null)
+            {
+
+            }
         }
-        if (enemy_02 != null)
+        
+        mesh = GetComponent<MeshRenderer>();
+        if (mesh.enabled)
         {
-            patrol_02 = enemy_02.GetComponentInChildren<Patrol>();
-        }
-        if (enemy_03 != null)
-        {
-            patrol_03 = enemy_01.GetComponentInChildren<Patrol>();
-        }
-        if (enemy_04 != null)
-        {
-            patrol_04 = enemy_01.GetComponentInChildren<Patrol>();
+            mesh.enabled = false;
         }
     }
     // Update is called once per frame
@@ -92,24 +109,31 @@ public class WeightSensing : MonoBehaviour
 
     private void CallEnemy()
     {
-        if (enemy_01 != null)
-        {
-            patrol_01.AlertCome(this.transform);
-        }
+        //if (enemy_01 != null)
+        //{
+        //    patrol_01.AlertCome(this.transform);
+        //}
 
-        if (enemy_02 != null)
-        {
-            patrol_02.AlertCome(this.transform);
-        }
+        //if (enemy_02 != null)
+        //{
+        //    patrol_02.AlertCome(this.transform);
+        //}
 
-        if (enemy_03 != null)
-        {
-            patrol_03.AlertCome(this.transform);
-        }
+        //if (enemy_03 != null)
+        //{
+        //    patrol_03.AlertCome(this.transform);
+        //}
 
-        if (enemy_04 != null)
+        //if (enemy_04 != null)
+        //{
+        //    patrol_04.AlertCome(this.transform);
+        //}
+        for (int i = 0; i < enemy.Length; ++i)
         {
-            patrol_04.AlertCome(this.transform);
+            if (enemy[i] != null)
+            {
+                enemy[i].GetComponentInChildren<Patrol>().AlertCome(transform);
+            }
         }
 
     }

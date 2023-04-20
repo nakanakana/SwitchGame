@@ -28,6 +28,11 @@ public class FlushController : MonoBehaviour
         
         //‰æ‘œ‚ð“§–¾‚É‚·‚é
         img.color = Color.clear;
+
+        if (!img.enabled)
+        {
+            img.enabled = true;
+        }
     }
 
    
