@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ObjDestroy : MonoBehaviour
 {
+   
+
     // Start is called before the first frame update
     //void Start()
     //{
@@ -13,7 +16,8 @@ public class ObjDestroy : MonoBehaviour
     //// Update is called once per frame
     //void Update()
     //{
-
+        
+       
     //}
 
     /// <summary>
@@ -47,9 +51,13 @@ public class ObjDestroy : MonoBehaviour
             //íeè¡Ç¶ÇÈ
             Destroy(collision.gameObject);
 
-            //Debug.Log("Hit");
+            EnemyCount.instance.SubEnemyCount();
+
+
+
         }
 
     }
+
 
 }

@@ -16,7 +16,7 @@ public class ClickSceneChange : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))    // 左マウスボタンをクリックしたら
         {
-            SceneManager.LoadScene("SampleScene");    // GameSceneに移動
+            SceneManager.LoadScene("stage1");    // GameSceneに移動
         }
     }
 }
