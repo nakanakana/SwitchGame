@@ -8,6 +8,7 @@ public class PlayerAnim : MonoBehaviour
 
     public MoveControl moveControl;
 
+    
     // ê›íËÇµÇΩÉtÉâÉOÇÃñºëO
     private const string key_isWalk = "IsWalk";
 
@@ -23,6 +24,8 @@ public class PlayerAnim : MonoBehaviour
             moveControl = GetComponentInParent<MoveControl>();
         }
 
+        
+        
         //!!!
         //hpCount = moveControl.GetLife();
     }
@@ -64,7 +67,6 @@ public class PlayerAnim : MonoBehaviour
         //}
 
     }
-
 
 }
 
