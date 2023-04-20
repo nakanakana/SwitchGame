@@ -122,7 +122,7 @@ private bool Grounded;//  地面に着地しているか判定する変数
             Grounded = true;//  Groundedをtrueにする
             //animator.SetBool("Grounded", true);
         }
-        if (other.gameObject.tag == "Cube")//  もしGroundというタグがついたオブジェクトに触れたら、
+        if (other.gameObject.tag == "Cube")//  もしCubeというタグがついたオブジェクトに触れたら、
         {
             Grounded = true;//  Groundedをtrueにする
             //animator.SetBool("Grounded", true);

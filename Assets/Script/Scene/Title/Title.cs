@@ -15,7 +15,7 @@ public class Title : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("stage1");
         }
     }
 }
