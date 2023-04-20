@@ -10,7 +10,7 @@ public class Infrared : MonoBehaviour
    // private AudioSource audioSource;
     private bool foundFlag = false;
     private float countTime = 0.0f;
-
+    
     private void Start()
     {
         lr = GetComponent<LineRenderer>();

@@ -9,7 +9,7 @@ public class MoveControl : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveForward;
     public float moveSpeed;
-    private float velocityMax = 3.0f;
+    private float velocityMax = 1.0f;
 
     public new GameObject camera;
 
@@ -90,18 +90,18 @@ private bool Grounded;//  地面に着地しているか判定する変数
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
         }
 
-        if (Grounded == true)//  もし、Groundedがtrueなら、
-        {
-            if (Input.GetKeyDown(KeyCode.Space))//  もし、スペースキーがおされたなら、  
-            {
-                //animator.SetTrigger("Jump");
-                Grounded = false;//  Groundedをfalseにする
-                                 //animator.SetBool("Grounded", false);
-                rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);//  上にJumpPower分力をかける
+        //if (Grounded == true)//  もし、Groundedがtrueなら、
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))//  もし、スペースキーがおされたなら、  
+        //    {
+        //        //animator.SetTrigger("Jump");
+        //        Grounded = false;//  Groundedをfalseにする
+        //                         //animator.SetBool("Grounded", false);
+        //        rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);//  上にJumpPower分力をかける
 
 
-            }
-        }
+        //    }
+        //}
 
         //rb.velocity = moveForward.normalized;
     }
