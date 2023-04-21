@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class ObjDestroy : MonoBehaviour
 {
@@ -41,7 +41,7 @@ public class ObjDestroy : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("No Hit");
-        
+
         if (collision.gameObject.CompareTag("Bullet") && gameObject.CompareTag("Enemy"))
         {
 
@@ -51,13 +51,18 @@ public class ObjDestroy : MonoBehaviour
             //íeè¡Ç¶ÇÈ
             Destroy(collision.gameObject);
 
-            EnemyCount.instance.SubEnemyCount();
 
+            if (SceneManager.GetActiveScene().name == "stage1")
+            {
+                EnemyCount.instance.SubEnemyCount();
+            }
 
+            if (SceneManager.GetActiveScene().name == "stage2")
+            {
+                EnemyCount2.instance.SubEnemyCount();
+            }
 
         }
 
     }
-
-
 }

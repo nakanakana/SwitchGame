@@ -18,26 +18,35 @@ public class FireBullet : MonoBehaviour
 
     //int count;
 
+    float DelayTimer = 5.0f;
+
     private void Start()
     {
         //count = 0;
+        DelayTimer = 5.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //左クリックしたか
-        if (Input.GetMouseButtonDown(0))
+
+        DelayTimer -= Time.deltaTime;
+        if (DelayTimer <= 3.0f)
         {
-            //if (count < 5)
+            //左クリックしたか
+            if (Input.GetMouseButtonDown(0))
             {
-                //弾を発射する
-                Shot();
+                //if (count < 5)
+                {
+                    //弾を発射する
+                    Shot();
 
-                //count++;
-                //Debug.Log(count);
+                    DelayTimer = 5.0f;
+                    //count++;
+                    //Debug.Log(count);
+                }
+
             }
-
         }
 
         //if (Input.GetKeyDown(KeyCode.R))
