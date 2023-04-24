@@ -45,7 +45,7 @@ public class PlayerAnim : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                animator.SetTrigger("Attack");
+                animator.SetTrigger("IsAttacked");
                 DelayTimer = 5.0f;
             }
         }
