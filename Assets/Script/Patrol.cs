@@ -10,6 +10,7 @@ using UnityEditor;
 
 public class Patrol : MonoBehaviour
 {
+    public static Patrol instance;
     private Animator animator;
     public Transform[] points;
     [SerializeField] int destPoint = 0;
@@ -19,11 +20,17 @@ public class Patrol : MonoBehaviour
     float distance;
     [SerializeField] float trackingRange = 3f;
     [SerializeField] float quitRange = 5f;
-    [SerializeField] bool tracking = false;
+    public bool tracking = false;
     [SerializeField]
     private float searchAngle = 100f;
 
-
+    public void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -77,6 +84,7 @@ public class Patrol : MonoBehaviour
 
             //Player‚ð–Ú•W‚Æ‚·‚é
             agent.destination = playerPos;
+
         }
         else
         {
