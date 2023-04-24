@@ -27,11 +27,14 @@ public class AttackSword : MonoBehaviour
             {
 
                 CapCol.enabled = true;
+                Debug.Log("TRUE");
                 DelayTimer = 5.0f;
+             
             }
-            else
+            else if(DelayTimer >= 4.5f)
             {
                 CapCol.enabled = false;
+                Debug.Log("FALSE");
             }
         }
 
