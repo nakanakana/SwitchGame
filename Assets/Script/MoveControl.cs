@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class MoveControl : MonoBehaviour
 {
+    public enum MyState
+    {
+        Normal,
+        Damage,
+        Attack
+    };
+
     //public Animator animator;
     private Rigidbody rb;
     private Vector3 moveForward;
@@ -131,43 +140,6 @@ private bool Grounded;//  地面に着地しているか判定する変数
 
    
 
-    //public void ChangeControl(bool controlFlag)
-    //{
-    //    control = controlFlag;
-    //    //animator.SetFloat("Speed", 0f);
-    //}
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Floor"))
-    //    {
-    //        this.gameObject.transform.SetParent(parentObj.transform);
-    //    }
-    //    if (collision.gameObject.CompareTag("Bane"))
-    //    {
-    //        this.gameObject.transform.SetParent(parentObj_.transform);
-    //    }
-    //    if(collision.gameObject.CompareTag("Push"))
-    //    {
-    //        animator.SetBool("Push", true);
-    //    }
-    //}
-
-    //void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Floor"))
-    //    {
-    //        this.gameObject.transform.SetParent(null);
-    //    }
-    //    if (collision.gameObject.CompareTag("Bane"))
-    //    {
-    //        this.gameObject.transform.SetParent(null);
-    //    }
-    //    if (collision.gameObject.CompareTag("Push"))
-    //    {
-    //        animator.SetBool("Push", false);
-    //    }
-
-    //}
+    
 }
 

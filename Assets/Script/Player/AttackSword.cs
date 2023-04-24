@@ -16,12 +16,12 @@ public class AttackSword : MonoBehaviour
         DelayTimer = 5.0f;
     }
 
-    //Update is called once per frame
+    ////Update is called once per frame
     void Update()
     {
 
         DelayTimer -= Time.deltaTime;
-        if (DelayTimer <= 1.0f)
+        if (DelayTimer <= 3.0f)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -34,16 +34,25 @@ public class AttackSword : MonoBehaviour
                 CapCol.enabled = false;
             }
         }
-            
+
+
+        //void OnTriggerEnter(Collider col)
+        //{
+        //    if (col.tag == "Enemy")
+        //    {
+        //        Debug.Log("敵に当たった");
+        //        col.GetComponent<Enemy>().SetState(Enemy.EnemyState.Damage);
+        //    }
+        //}
     }
 
     void OnCollisionEnter(Collision collision)
     {
         // 剣で当たったオブジェクトが敵である場合
-        if (CapCol.enabled == true && collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.tag == "Enemy")
         {
             // 敵を削除する
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject, 0.2f);
 
         }
     }
