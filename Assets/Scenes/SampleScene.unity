@@ -231,39 +231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620e61c1c2c25b04990a452b6fd4dd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &239223711 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1291226239442454839, guid: db641aa2d3ee7f943a85e1db84a90f94, type: 3}
-  m_PrefabInstance: {fileID: 2762814543587014986}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &239223712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239223711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9ad26bea152ca4993efdda7cfb3495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Maxlife: 1
-  life: 1
---- !u!114 &239223715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239223711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e645feb7cfd044e9ee5989084d552e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackspan: 0.5
-  attackCollider: {fileID: 441767301}
 --- !u!1001 &341501821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,11 +395,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &441767301 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 2653652467060139232, guid: db641aa2d3ee7f943a85e1db84a90f94, type: 3}
-  m_PrefabInstance: {fileID: 2762814543587014986}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &504536104
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,16 +941,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &712417714 stripped
+--- !u!1 &712417714
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6fca38d36faaf9648949e60c3b2204e9, type: 3}
   m_PrefabInstance: {fileID: 1300125460}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &712417715 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712417718}
+  - component: {fileID: 712417717}
+  - component: {fileID: 712417716}
+  m_Layer: 0
+  m_Name: Placeholder for referenced GameObject in Prefab instance (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &712417715
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6fca38d36faaf9648949e60c3b2204e9, type: 3}
   m_PrefabInstance: {fileID: 1300125460}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325376873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 712417718}
+  m_Father: {fileID: 845129127}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &712417716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,6 +1007,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &712417718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9223372036854775807, guid: 6fca38d36faaf9648949e60c3b2204e9, type: 3}
+  m_PrefabInstance: {fileID: 1300125460}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712417714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 712417715}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712633047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,6 +2543,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fca38d36faaf9648949e60c3b2204e9, type: 3}
+--- !u!1 &1325376873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6fca38d36faaf9648949e60c3b2204e9, type: 3}
+  m_PrefabInstance: {fileID: 1300125460}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712417715}
+  m_Layer: 0
+  m_Name: 'player_anim_idle (Missing Prefab with guid: 6fca38d36faaf9648949e60c3b2204e9)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1338459248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3023,7 +3038,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 2307837730538437375}
-  damageeffect: {fileID: 0}
 --- !u!195 &1698267741
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3517,7 +3531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 7409849643714862265}
-  damageeffect: {fileID: 0}
 --- !u!114 &2033194059
 MonoBehaviour:
   m_ObjectHideFlags: 0
