@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e03e8d9c760df64d81409d95cebf118
+guid: f16a04b6d58c56840ab7a9f54565ca20
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
@@ -36,7 +36,7 @@ ModelImporter:
       takeName: walk
       internalID: -3419257869308726280
       firstFrame: 181
-      lastFrame: 340
+      lastFrame: 240
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 6fca38d36faaf9648949e60c3b2204e9
+guid: 925f3b67286314147bfd4ea5bd3331d2
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_player
+    second: {fileID: 2100000, guid: 1a623cfcdf65c264f8d7c208ccf11ce8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,8 +40,8 @@ ModelImporter:
       name: idle
       takeName: idle
       internalID: -5252816984213320552
-      firstFrame: 5
-      lastFrame: 175
+      firstFrame: 1
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
