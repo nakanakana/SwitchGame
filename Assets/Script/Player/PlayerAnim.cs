@@ -8,7 +8,8 @@ public class PlayerAnim : MonoBehaviour
 
     public MoveControl moveControl;
 
-    
+    float DelayTimer = 5.0f; 
+
     // 設定したフラグの名前
     private const string key_isWalk = "IsWalk";
 
@@ -24,8 +25,9 @@ public class PlayerAnim : MonoBehaviour
             moveControl = GetComponentInParent<MoveControl>();
         }
 
-        
-        
+        DelayTimer = 5.0f;
+
+
         //!!!
         //hpCount = moveControl.GetLife();
     }
@@ -38,11 +40,16 @@ public class PlayerAnim : MonoBehaviour
         //Debug.Log(moveControl);
 
         //ATTACK
-        if (Input.GetMouseButtonDown(0))
+        DelayTimer -= Time.deltaTime;
+        if (DelayTimer <= 3.0f)
         {
-            animator.SetTrigger("IsAttacked");
-
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetTrigger("IsAttacked");
+                DelayTimer = 5.0f;
+            }
         }
+        
 
 
         // ボタンを押下している

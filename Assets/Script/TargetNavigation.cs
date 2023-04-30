@@ -10,9 +10,12 @@ public class TargetNavigation : MonoBehaviour
 
 	private NavMeshAgent m_Agent;
 
+
 	void Start()
 	{
 		m_Agent = GetComponent<NavMeshAgent>();
+
+		
 	}
 
 	void Update()
@@ -21,4 +24,5 @@ public class TargetNavigation : MonoBehaviour
 
 	}
 
+    
 }
