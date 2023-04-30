@@ -1525,9 +1525,7 @@ GameObject:
   - component: {fileID: 1391925017118964202}
   - component: {fileID: 2637086038594706912}
   - component: {fileID: 2653652467060139232}
-  - component: {fileID: 1269818755517091586}
   - component: {fileID: 2762814542078746238}
-  - component: {fileID: 2762814542078746224}
   m_Layer: 0
   m_Name: FirePoint (1)
   m_TagString: Untagged
@@ -1612,18 +1610,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.3}
---- !u!114 &1269818755517091586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5183736498655230278}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568f26f7ff612404db5413b2e494bce8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2762814542078746238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1637,18 +1623,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 6, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2762814542078746224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5183736498655230278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d7e517eb17f5340846446780166fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5611124511804343439
 GameObject:
   m_ObjectHideFlags: 0
