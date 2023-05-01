@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HitSword : MonoBehaviour
 {
     private CapsuleCollider CapCol;
-    private GameObject[] enemyBox;
+    //private GameObject[] enemyBox;
 
     float DelayTimer = 5.0f;
 
@@ -53,17 +53,19 @@ public class HitSword : MonoBehaviour
             // “G‚ğíœ‚·‚é
             Destroy(collision.gameObject, 0.2f);
 
+        
+            if (SceneManager.GetActiveScene().name == "stage1")
+            {
+                EnemyCount.instance.SubEnemyCount();
+               
+            }
+
+            if (SceneManager.GetActiveScene().name == "stage2")
+            {
+                EnemyCount2.instance.SubEnemyCount();
+            }
         }
 
-        if (SceneManager.GetActiveScene().name == "stage1")
-        {
-            EnemyCount.instance.SubEnemyCount();
-        }
-
-        if (SceneManager.GetActiveScene().name == "stage2")
-        {
-            EnemyCount2.instance.SubEnemyCount();
-        }
     }
 
     //public float attackspan = 0.5f;
