@@ -38,7 +38,7 @@ public class Patrol : MonoBehaviour
         // autoBraking を無効にすると、目標地点の間を継続的に移動します
         //(つまり、エージェントは目標地点に近づいても
         // 速度をおとしません)
-        agent.autoBraking = false;
+        agent.autoBraking = true;
 
         GotoNextPoint();
 
