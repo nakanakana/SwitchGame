@@ -34,7 +34,8 @@ public class EnemyCount : MonoBehaviour
         {
             Dtimer -= Time.deltaTime;
 
-            if(Dtimer <= 0 )
+            if (Dtimer <= 0)
+                Debug.Log("stage2‚Ö");
             SceneManager.LoadScene("stage2");
         }
     }

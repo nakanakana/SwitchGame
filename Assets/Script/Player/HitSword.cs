@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HitSword : MonoBehaviour
 {
@@ -52,6 +53,16 @@ public class HitSword : MonoBehaviour
             // “G‚ğíœ‚·‚é
             Destroy(collision.gameObject, 0.2f);
 
+        }
+
+        if (SceneManager.GetActiveScene().name == "stage1")
+        {
+            EnemyCount.instance.SubEnemyCount();
+        }
+
+        if (SceneManager.GetActiveScene().name == "stage2")
+        {
+            EnemyCount2.instance.SubEnemyCount();
         }
     }
 
