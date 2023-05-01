@@ -21,7 +21,8 @@ public class SwitchObj : MonoBehaviour
 
     private void Start()
     {
-        gameObject1 = GameObject.Find("Player");
+        //gameObject1 = GameObject.Find("Player");
+        gameObject1 = GameObject.FindWithTag("Player");
         //firstObjectPosition = firstObject.transform.position;
         //secondObjectPosition = secondObject.transform.position;
     }

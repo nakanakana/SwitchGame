@@ -25,6 +25,7 @@ public class MoveControl : MonoBehaviour
     float inputHorizontal = 0;
     float inputVertical = 0;
 
+    private const float RotateSpeed = 720f;
     //add
     //{
     //public int lifecount = 0;
@@ -74,6 +75,14 @@ private bool Grounded;//  地面に着地しているか判定する変数
             transform.rotation = Quaternion.LookRotation(moveForward, transform.up);
         }
 
+        //Vector3 direction = InputToDirection();
+        //float magnitude = direction.magnitude;
+
+        //if (Mathf.Approximately(magnitude, 0f) == false)
+        //{
+        //    UpdateRotation(direction);
+        //}
+
 
         if (rb.velocity.x > velocityMax)
         {
@@ -115,14 +124,14 @@ private bool Grounded;//  地面に着地しているか判定する変数
         //rb.velocity = moveForward.normalized;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "GameOverArea")
-        {
-            //rb.transform.position = new Vector3(1.44f, 2.0f, -3.05f);
-            SceneManager.LoadScene("SampleScene");
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.name == "GameOverArea")
+    //    {
+    //        //rb.transform.position = new Vector3(1.44f, 2.0f, -3.05f);
+    //        SceneManager.LoadScene("SampleScene");
+    //    }
+    //}
 
     void OnCollisionEnter(Collision other)//  地面に触れた時の処理
     {
@@ -138,8 +147,41 @@ private bool Grounded;//  地面に着地しているか判定する変数
         }
     }
 
-   
 
-    
+    //private Vector3 InputToDirection()
+    //{
+    //    Vector3 direction = new Vector3(0f, 0f, 0f);
+
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        direction.x += 1f;
+    //    }
+
+    //    if (Input.GetKey(KeyCode.A))
+    //    {
+    //        direction.x -= 1f;
+    //    }
+
+    //    if (Input.GetKey(KeyCode.W))
+    //    {
+    //        direction.z += 1f;
+    //    }
+
+    //    if (Input.GetKey(KeyCode.S))
+    //    {
+    //        direction.z -= 1f;
+    //    }
+
+    //    return direction.normalized;
+    //}
+
+    //private void UpdateRotation(Vector3 direction)
+    //{
+    //    Quaternion from = transform.rotation;
+    //    Quaternion to = Quaternion.LookRotation(direction);
+    //    transform.rotation = Quaternion.RotateTowards(from, to, RotateSpeed * Time.deltaTime);
+    //}
+
+
 }
 

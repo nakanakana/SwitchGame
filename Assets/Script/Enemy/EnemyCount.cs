@@ -30,6 +30,8 @@ public class EnemyCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Count);
+
         if (Count <= 0)
         {
             Dtimer -= Time.deltaTime;
@@ -43,9 +45,7 @@ public class EnemyCount : MonoBehaviour
     public void SubEnemyCount()
     {
        
-
        Count--;
-
 
     }
 }
