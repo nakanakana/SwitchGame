@@ -20,6 +20,8 @@ public class EnemyAttack : MonoBehaviour
             {
                 BallShot();
                 time = 1.0f;
+
+                Destroy(ball, 2);
             }
         }
     }
