@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
                 BallShot();
                 time = 1.0f;
 
-                Destroy(ball, 2);
+                
             }
         }
     }
@@ -30,5 +30,6 @@ public class EnemyAttack : MonoBehaviour
     {
         GameObject shotObj = Instantiate(ball, transform.position, Quaternion.identity);
         shotObj.GetComponent<Rigidbody>().velocity = transform.forward * ballSpeed;
+        Destroy(shotObj, 2.0f);
     }
 }
