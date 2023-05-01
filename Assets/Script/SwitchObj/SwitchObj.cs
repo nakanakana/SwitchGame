@@ -42,7 +42,7 @@ public class SwitchObj : MonoBehaviour
         if (gameObject2 != null)
         {
             // オブジェクトの位置を交換する
-            if (gameObject2.CompareTag("Cube") && gameObject1.name == ("Player")
+            if (gameObject2.CompareTag("Cube") && gameObject1.CompareTag("Player")
             /*|| gameObject1.CompareTag("Cube") && gameObject2.name == ("Player")*/)
             {
                 SwapObj(gameObject1, gameObject2);
