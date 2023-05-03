@@ -12,9 +12,7 @@ public class WeightSensing : MonoBehaviour
 
     [Header("来てほしい敵をセット")]
     public GameObject[] enemy;
-    //public GameObject enemy_02;
-    //public GameObject enemy_03;
-    //public GameObject enemy_04;
+  
 
 
    
@@ -24,24 +22,6 @@ public class WeightSensing : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
-        //if (enemy_01 != null)
-        //{
-        //    patrol_01 = enemy_01.GetComponentInChildren<Patrol>();
-        //}
-        //if (enemy_02 != null)
-        //{
-        //    patrol_02 = enemy_02.GetComponentInChildren<Patrol>();
-        //}
-        //if (enemy_03 != null)
-        //{
-        //    patrol_03 = enemy_01.GetComponentInChildren<Patrol>();
-        //}
-        //if (enemy_04 != null)
-        //{
-        //    patrol_04 = enemy_01.GetComponentInChildren<Patrol>();
-        //}
-
        
         
         mesh = GetComponent<MeshRenderer>();
@@ -56,22 +36,22 @@ public class WeightSensing : MonoBehaviour
 
 
         //ひとまず一定時間で鳴り止むようにしている。
-        if (countTime >= 7)
+        if (foundFlag&&!audioSource.isPlaying)
         {
-            foundFlag = false;
+            audioSource.Stop();
             countTime = 0.0f;
-            //Alert.instance.ReleaseAleart();
+            foundFlag = false;
             // FlushController.instance.flushClear();
             // audioSource.Stop();
-            
+
         }
         //見つかっているなら鳴っている時間のカウントを始める   
-        if (foundFlag)
-        {
-            countTime += Time.deltaTime;
-            // FlushController.instance.flush();
-            CallEnemy();
-        }
+        //if (foundFlag)
+        //{
+        //    countTime += Time.deltaTime;
+        //    // FlushController.instance.flush();
+            
+        //}
       
            
 
@@ -86,41 +66,19 @@ public class WeightSensing : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //audioSource.clip = sound;
-            //audioSource.Play();
-          
-            foundFlag = true;
-            
-            //Alert.instance.OnAleart();
-           
-
-
-
+            if (!foundFlag)
+            {
+                audioSource.clip = sound;
+                audioSource.Play();
+                Alert.instance.CallEnemy(enemy, transform);
+                foundFlag = true;            
+            }
+            // Alert.instance.OnAleart();
         }
     }
 
     private void CallEnemy()
     {
-        //if (enemy_01 != null)
-        //{
-        //    patrol_01.AlertCome(this.transform);
-        //}
-
-        //if (enemy_02 != null)
-        //{
-        //    patrol_02.AlertCome(this.transform);
-        //}
-
-        //if (enemy_03 != null)
-        //{
-        //    patrol_03.AlertCome(this.transform);
-        //}
-
-        //if (enemy_04 != null)
-        //{
-        //    patrol_04.AlertCome(this.transform);
-        //}
-
         for (int i = 0; i < enemy.Length; ++i)
         {
             if (enemy[i] != null)
