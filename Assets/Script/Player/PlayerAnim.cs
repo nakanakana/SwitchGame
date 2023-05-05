@@ -40,15 +40,15 @@ public class PlayerAnim : MonoBehaviour
         //Debug.Log(moveControl);
 
         //ATTACK
-        DelayTimer -= Time.deltaTime;
-        if (DelayTimer <= 3.0f)
-        {
+        //DelayTimer -= Time.deltaTime;
+        //if (DelayTimer <= 3.0f)
+        //{
             if (Input.GetMouseButtonDown(0))
             {
                 animator.SetTrigger("IsAttacked");
-                DelayTimer = 5.0f;
+                //DelayTimer = 5.0f;
             }
-        }
+       // }
         
 
 

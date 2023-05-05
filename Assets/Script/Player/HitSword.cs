@@ -5,67 +5,100 @@ using UnityEngine.SceneManagement;
 
 public class HitSword : MonoBehaviour
 {
-    private CapsuleCollider CapCol;
+    //private Transform animationTransform;
+    //private BoxCollider BoxCol;
+    //private CapsuleCollider CapCol;
     //private GameObject[] enemyBox;
 
-    float DelayTimer = 5.0f;
+    //float DelayTimer = 5.0f;
 
     //Start is called before the first frame update
-    void Start()
+    //void Start()
+    //{
+    //    //animationTransform = GetComponent<Transform>();
+    //    //BoxCol = GetComponent<BoxCollider>();
+    //    CapCol = GetComponent<CapsuleCollider>();
+
+    //    //DelayTimer = 5.0f;
+
+    //    //BoxCol.enabled = false;
+    //    CapCol.enabled = false;
+    //}
+
+    //void Update()
+    //{
+
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        //BoxCol.enabled = true;
+    //        //CapCol.enabled = true;
+
+    //        if (/*BoxCol.enabled == true*/CapCol.enabled == true)
+    //        {
+    //            Debug.Log("TRUE");
+    //        }
+
+    //        Debug.Log("マウス押下");
+
+
+    //    }
+    //    else if(Input.GetMouseButtonUp(0))
+    //    {
+    //        //BoxCol.enabled = false;
+    //        CapCol.enabled = false;
+
+    //        Debug.Log("マウス押上");
+
+    //        if (/*BoxCol.enabled == true*/CapCol.enabled == false)
+    //        {
+    //            Debug.Log("FALSE");
+    //        }
+
+
+    //    }
+    //    // AnimationのTransformに合わせてBoxColliderの位置を同期する
+    //    //BoxCol.center = animationTransform.position;
+    //    //Debug.Log(BoxCol.enabled);
+    //}
+
+    //void OnCollisionEnter(Collision collision)
+    //{
+
+    //    //if (BoxCol.enabled == true)
+    //    //{
+    //        // 剣で当たったオブジェクトが敵である場合
+    //        if (collision.gameObject.tag == "Enemy")
+    //        {
+    //            // 敵を削除する
+    //            Destroy(collision.gameObject, 0.5f);
+
+
+    //            //if (SceneManager.GetActiveScene().name == "stage1")
+    //            //{
+    //            //    EnemyCount.instance.SubEnemyCount();
+
+    //            //}
+
+    //            //if (SceneManager.GetActiveScene().name == "stage2")
+    //            //{
+    //            //    EnemyCount2.instance.SubEnemyCount();
+    //            //}
+    //        }
+
+    //   // }
+
+    //}
+
+    void OnTriggerEnter(Collider other)
     {
-        CapCol = GetComponent<CapsuleCollider>();
 
-        DelayTimer = 5.0f;
-
-        CapCol.enabled = false;
-    }
-
-    void Update()
-    {
-
-        if (Input.GetMouseButtonDown(0))
+        //攻撃した相手がEnemyの場合
+        if (other.CompareTag("Enemy"))
         {
-            CapCol.enabled = true;
 
-            if (CapCol.enabled == true)
-            {
-                Debug.Log("TRUE");
-
-            }
+            Destroy(other.gameObject, 0.4f);
 
         }
-        else
-        {
-            CapCol.enabled = false;
-
-            if (CapCol.enabled == false)
-                Debug.Log("FALSE");
-
-        }
-
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        // 剣で当たったオブジェクトが敵である場合
-        if (collision.gameObject.tag == "Enemy")
-        {
-            // 敵を削除する
-            Destroy(collision.gameObject, 0.2f);
-
-        
-            if (SceneManager.GetActiveScene().name == "stage1")
-            {
-                EnemyCount.instance.SubEnemyCount();
-               
-            }
-
-            if (SceneManager.GetActiveScene().name == "stage2")
-            {
-                EnemyCount2.instance.SubEnemyCount();
-            }
-        }
-
     }
 
     //public float attackspan = 0.5f;
