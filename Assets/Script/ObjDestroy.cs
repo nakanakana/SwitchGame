@@ -38,31 +38,27 @@ public class ObjDestroy : MonoBehaviour
     }
 
 
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    //Debug.Log("No Hit");
+    void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log("No Hit");
 
-    //    if (collision.gameObject.CompareTag("Bullet") && gameObject.CompareTag("Enemy"))
-    //    {
+        if (collision.gameObject.CompareTag("Sword") && gameObject.CompareTag("Enemy"))
+        {
 
-    //        // 0.2ïbå„Ç…Enemyè¡Ç¶ÇÈ
-    //        Destroy(gameObject, 0.2f);
+            // 0.2ïbå„Ç…Enemyè¡Ç¶ÇÈ
+            Destroy(gameObject, 0.2f);
 
-    //        //íeè¡Ç¶ÇÈ
-    //        Destroy(collision.gameObject);
+            //if (SceneManager.GetActiveScene().name == "stage1")
+            //{
+            //    EnemyCount.instance.SubEnemyCount();
+            //}
 
+            //if (SceneManager.GetActiveScene().name == "stage2")
+            //{
+            //    EnemyCount2.instance.SubEnemyCount();
+            //}
 
-    //        if (SceneManager.GetActiveScene().name == "stage1")
-    //        {
-    //            EnemyCount.instance.SubEnemyCount();
-    //        }
+        }
 
-    //        if (SceneManager.GetActiveScene().name == "stage2")
-    //        {
-    //            EnemyCount2.instance.SubEnemyCount();
-    //        }
-
-    //    }
-
-    //}
+    }
 }

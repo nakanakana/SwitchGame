@@ -23,25 +23,25 @@ public class AlertDevice : MonoBehaviour
     void Update()
     {
         dist = Vector3.Distance(player.transform.position, this.transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit hit;
         ;
         if (dist < 1.5f)
         {
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !Alert.instance.GetisAlert())
             {
                 Alert.instance.OnAleart();
+                Alert.instance.CallEnemy(enemy, transform);
+                //aleartTime = 0.0f;
                 deviceFlag = true;
-
             }
-
         }
 
         if (deviceFlag)
         {
             aleartTime += Time.deltaTime;
-            CallEnemy();
+            
         }
         if (aleartTime >= 7)
         {
@@ -49,13 +49,12 @@ public class AlertDevice : MonoBehaviour
             aleartTime = 0.0f;
             //FlushController.instance.flushClear();
             Alert.instance.ReleaseAleart();
+            deviceFlag = false;
         }
+        Debug.Log(aleartTime);
     }
-
     private void CallEnemy()
     {
-       
-
         for (int i = 0; i < enemy.Length; ++i)
         {
             if (enemy[i] != null)
@@ -63,8 +62,5 @@ public class AlertDevice : MonoBehaviour
                 enemy[i].GetComponentInChildren<Patrol>().AlertCome(transform);
             }
         }
-
-
-
     }
 }

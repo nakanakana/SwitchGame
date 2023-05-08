@@ -7,7 +7,9 @@ public class Alert : MonoBehaviour
     public static Alert instance;
     public AudioClip sound;  
     private AudioSource audioSource;
-    private bool isAlert = false;
+    private bool isAlert = false; //鳴っているかどうか
+    private bool isCall = false;　//敵を呼んでいるかどうか
+    private GameObject[] enemy;
 
     private void Awake()
     {
@@ -46,6 +48,20 @@ public class Alert : MonoBehaviour
 
     }
 
+    //外部から音声を指定したい場合
+    public void OnAleart(AudioClip so)
+    {
+        //まだ鳴っていなければ鳴らす
+        if (!isAlert)
+        {
+            audioSource.clip = so;
+            audioSource.Play();
+            isAlert = true;
+        }
+
+    }
+
+
     //画面の点滅を終わらせる
     //警報を止める
     public void ReleaseAleart()
@@ -59,6 +75,21 @@ public class Alert : MonoBehaviour
     {
         return isAlert;
     }
+
+    public void CallEnemy(GameObject[] enemies,Transform tr)
+    {
+            for (int i = 0; i < enemies.Length; ++i)
+            {
+                if (enemies[i] != null)
+                {
+                    enemies[i].GetComponentInChildren<Patrol>().AlertCome(tr);
+                }
+            }
+           
+        
+
+    }
+  
 }
 
 

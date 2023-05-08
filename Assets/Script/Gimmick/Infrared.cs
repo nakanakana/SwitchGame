@@ -10,7 +10,9 @@ public class Infrared : MonoBehaviour
    // private AudioSource audioSource;
     private bool foundFlag = false;
     private float countTime = 0.0f;
-    
+    [Header("—ˆ‚Ä‚Ù‚µ‚¢“G‚ğƒZƒbƒg")]
+    public GameObject[] enemy;
+
     private void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -36,7 +38,7 @@ public class Infrared : MonoBehaviour
             lr.SetPosition(1, hit.point);
 
 
-            if (hit.transform.CompareTag("Player") && !foundFlag)
+            if (hit.transform.CompareTag("Player") && !Alert.instance.GetisAlert())
             {
                 //print("N“üÒ”­Œ©");
                 // Œx•ñ‰¹‚ğ–Â‚ç‚·B
@@ -44,6 +46,7 @@ public class Infrared : MonoBehaviour
                 //audioSource.Play();
              
                 Alert.instance.OnAleart();
+                Alert.instance.CallEnemy(enemy, transform);
                 foundFlag = true;
             }
         }
@@ -68,7 +71,8 @@ public class Infrared : MonoBehaviour
         if (foundFlag)
         {
             countTime += Time.deltaTime;
-           // FlushController.instance.flush();
+            // FlushController.instance.flush();
+            
         }
 
        
