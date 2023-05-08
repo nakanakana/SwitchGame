@@ -1181,6 +1181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7551951451268359400, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f17e29e2055f21b479c4c32b51c3eb44, type: 2}
     - target: {fileID: 8344351682216789309, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
       propertyPath: m_Name
       value: Launcher (4)
@@ -2970,6 +2974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7551951451268359400, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f17e29e2055f21b479c4c32b51c3eb44, type: 2}
     - target: {fileID: 8344351682216789309, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
       propertyPath: m_Name
       value: Launcher (2)
@@ -3235,6 +3243,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7551951451268359400, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f17e29e2055f21b479c4c32b51c3eb44, type: 2}
     - target: {fileID: 8344351682216789309, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
       propertyPath: m_Name
       value: Launcher (3)
@@ -6954,6 +6966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7551951451268359400, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f17e29e2055f21b479c4c32b51c3eb44, type: 2}
     - target: {fileID: 8344351682216789309, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
       propertyPath: m_Name
       value: Launcher (1)
@@ -8034,6 +8050,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7551951451268359400, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f17e29e2055f21b479c4c32b51c3eb44, type: 2}
     - target: {fileID: 8344351682216789309, guid: 244add26b0e626a4795ed303a2c36420, type: 3}
       propertyPath: m_Name
       value: Launcher
