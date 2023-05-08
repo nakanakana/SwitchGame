@@ -9,6 +9,9 @@ public class Attack : MonoBehaviour
 
     private Collider swordCollider;
 
+    [SerializeField]
+    float attackTime;
+
     private void Start()
     {
         //PlayerのAnimatorコンポーネントを取得する
@@ -29,7 +32,7 @@ public class Attack : MonoBehaviour
             swordCollider.enabled = true;
 
             //一定時間後にコライダーの機能をオフにする
-            Invoke("ColliderReset", 2.5f);
+            Invoke("ColliderReset", attackTime);
         }
         
     }
