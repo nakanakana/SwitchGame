@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class MoveControl : MonoBehaviour
 {
-    public enum MyState
-    {
-        Normal,
-        Damage,
-        Attack
-    };
+    //public enum MyState
+    //{
+    //    Normal,
+    //    Damage,
+    //    Attack
+    //};
 
     //public Animator animator;
     private Rigidbody rb;
