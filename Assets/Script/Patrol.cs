@@ -23,7 +23,6 @@ public class Patrol : MonoBehaviour
     public bool tracking = false;
     [SerializeField]
     private float searchAngle = 100f;
-
     public void Awake()
     {
         if(instance == null)
@@ -99,8 +98,7 @@ public class Patrol : MonoBehaviour
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
         }
-
-        
+        if (tracking) EnemyAttack.instance.EnemyShot();
     }
     public void AlertCome(Transform alertpos)
     {
