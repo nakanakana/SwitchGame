@@ -7,6 +7,11 @@ public class SwitchObj : MonoBehaviour
 {
     //クリック数をカウントする
     int clickcnt = 0;
+
+    bool IsClick;
+
+    float Timer = 1.0f;
+
     //オブジェクトの位置を管理する配列
     //[SerializeField] Transform[] trans;
     //他から呼び出せるようにするためのインスタンス
@@ -35,8 +40,12 @@ public class SwitchObj : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
+            Timer -= Time.deltaTime;
+
             if (Input.GetMouseButtonDown(1))
             {
+                
+
                 gameObject2 = hit.collider.gameObject;
             }
         }
