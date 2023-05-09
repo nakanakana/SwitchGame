@@ -14,7 +14,7 @@ public class MoveControl : MonoBehaviour
     //    Attack
     //};
 
-    //public Animator animator;
+    private Animator animator;
     private Rigidbody rb;
     private Vector3 moveForward;
     public float moveSpeed;
@@ -26,39 +26,42 @@ public class MoveControl : MonoBehaviour
     float inputVertical = 0;
 
     private const float RotateSpeed = 720f;
-    //add
-    //{
-    //public int lifecount = 0;
-    //public int GetLife() { return lifecount; }
-    //}
 
-//[SerializeField]
-//private GameObject parentObj;
+    private const string key_isWalk = "IsWalk";
 
-//[SerializeField]
-//private GameObject parentObj_;
-private bool Grounded;//  地面に着地しているか判定する変数
-    private float Jumppower;//  ジャンプ力
+    public bool hitEnemy;
+
+    //[SerializeField]
+    //private GameObject parentObj;
+
+    //[SerializeField]
+    //private GameObject parentObj_;
+    private bool Grounded;//  地面に着地しているか判定する変数
+   // private float Jumppower;//  ジャンプ力
 
     private void FixedUpdate()
     {
+        if(!hitEnemy)
         rb.AddForce(moveForward.normalized * moveSpeed, ForceMode.Impulse);
     }
 
     void Start()
     {
-        Jumppower = 0.0f;
+        //Jumppower = 0.0f;
         rb = GetComponent<Rigidbody>();
 
-        //add
-        //lifecount = 1;
+        hitEnemy = false;
+
+        this.animator = GetComponent<Animator>();
 
         //Debug.Assert(parentObj != null);
         //Debug.Assert(parentObj_ != null);
+
     }
 
     void Update()
     {
+
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
@@ -70,10 +73,15 @@ private bool Grounded;//  地面に着地しているか判定する変数
 
         //animator.SetFloat("Speed", Mathf.Abs(moveForward.z));
 
-        if ((inputHorizontal != 0) || (inputVertical != 0))
+
+        if (!hitEnemy)
         {
-            transform.rotation = Quaternion.LookRotation(moveForward, transform.up);
-        }
+            if ((inputHorizontal != 0) || (inputVertical != 0))
+            {
+                transform.rotation = Quaternion.LookRotation(moveForward, transform.up);
+            }
+
+        
 
         //Vector3 direction = InputToDirection();
         //float magnitude = direction.magnitude;
@@ -84,28 +92,57 @@ private bool Grounded;//  地面に着地しているか判定する変数
         //}
 
 
-        if (rb.velocity.x > velocityMax)
-        {
-            rb.velocity = new Vector3(0.3f, rb.velocity.y, rb.velocity.z);
-        }
-
-        if (rb.velocity.x < -velocityMax)
-        {
-            rb.velocity = new Vector3(-0.3f, rb.velocity.y, rb.velocity.z);
-        }
-
-        //if (rb.velocity.y > 0.3f)
-        //{
-        //    rb.velocity = new Vector3(rb.velocity.x, 0.3f, rb.velocity.z);
+        //if (rb.velocity.y > 0.3f) 
+        //{ 
+        //    rb.velocity = new Vector3(rb.velocity.x, 0.3f, rb.velocity.z); 
         //}
 
-        if (rb.velocity.z > velocityMax)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0.3f);
+        
+
+            if (rb.velocity.x > velocityMax)
+            {
+                rb.velocity = new Vector3(0.3f, rb.velocity.y, rb.velocity.z);
+            }
+
+            if (rb.velocity.x < -velocityMax)
+            {
+                rb.velocity = new Vector3(-0.3f, rb.velocity.y, rb.velocity.z);
+            }
+
+
+            if (rb.velocity.z > velocityMax)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0.3f);
+            }
+            if (rb.velocity.z < -velocityMax)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
+            }
         }
-        if (rb.velocity.z < -velocityMax)
+        
+
+        //Animation
+        if(Input.GetMouseButtonDown(0))
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
+            animator.SetTrigger("IsAttacked");
+            
+        }
+
+        if (!hitEnemy)
+        {
+           
+       
+            // ボタンを押下している
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                // WaitからRunに遷移する
+                this.animator.SetBool(key_isWalk, true);
+            }
+            else
+            {
+                // RunからWaitに遷移する
+                this.animator.SetBool(key_isWalk, false);
+            }
         }
 
         //if (Grounded == true)//  もし、Groundedがtrueなら、
@@ -116,8 +153,6 @@ private bool Grounded;//  地面に着地しているか判定する変数
         //        Grounded = false;//  Groundedをfalseにする
         //                         //animator.SetBool("Grounded", false);
         //        rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);//  上にJumpPower分力をかける
-
-
         //    }
         //}
 
@@ -145,8 +180,15 @@ private bool Grounded;//  地面に着地しているか判定する変数
             Grounded = true;//  Groundedをtrueにする
             //animator.SetBool("Grounded", true);
         }
-    }
 
+        if (other.gameObject.tag == "Enemy")//  もしGroundというタグがついたオブジェクトに触れたら、
+        {
+            hitEnemy = true;
+            animator.SetTrigger("IsDied");
+        }
+
+
+    }
 
     //private Vector3 InputToDirection()
     //{

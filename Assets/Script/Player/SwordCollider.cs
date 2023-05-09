@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SwordCollider : MonoBehaviour
 {
-    private BoxCollider boxCollider;
+    private SphereCollider spCollider;
 
     void Start()
     {
         // ゲームオブジェクトにアタッチされた BoxCollider コンポーネントを取得
-        boxCollider = GetComponent<BoxCollider>();
+        spCollider = GetComponent<SphereCollider>();
     }
 
     void Update()
@@ -17,11 +17,11 @@ public class SwordCollider : MonoBehaviour
         // 左クリックされた時のみ、Box Collider を有効化する
         if (Input.GetMouseButtonDown(0))
         {
-            boxCollider.enabled = true;
+            spCollider.enabled = true;
         }
         else
         {
-            boxCollider.enabled = false;
+            spCollider.enabled = false;
             Debug.Log(false);
         }
     }

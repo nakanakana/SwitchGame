@@ -145,6 +145,7 @@ public class SwitchObj : MonoBehaviour
         Vector3 tmp = gameObject1.transform.position;
         gameObject1.transform.position = gameObject2.transform.position;
         gameObject2.transform.position = tmp;
+
         //Vector3 tmp = firstObject.transform.position;
         //firstObject.transform.position = secondObject.transform.position;
         //secondObject.transform.position = tmp;
