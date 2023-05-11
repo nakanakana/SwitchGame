@@ -104,11 +104,11 @@ public class Patrol : MonoBehaviour
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
         }
-        if (tracking) { 
+        //if (tracking) { 
             
-            Debug.Log("プレイヤーがおる");
-        }
-
+        //    Debug.Log("プレイヤーがおる");
+        //}
+        
     }
     public void AlertCome(Transform alertpos)
     {
@@ -149,4 +149,10 @@ public class Patrol : MonoBehaviour
         shotObj.GetComponent<Rigidbody>().velocity = transform.forward * ballSpeed;
         Destroy(shotObj, 2.0f);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        //if(other.gameObject.tag == "Bullet")
+        //Debug.Log(other.gameObject.tag);
+    }
+
 }
