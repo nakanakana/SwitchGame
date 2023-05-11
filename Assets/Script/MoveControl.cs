@@ -29,7 +29,9 @@ public class MoveControl : MonoBehaviour
 
     private const string key_isWalk = "IsWalk";
 
-    public bool hitEnemy;
+    public static MoveControl instance;
+
+    public bool hitEnemy = false;
 
     //[SerializeField]
     //private GameObject parentObj;
@@ -45,15 +47,22 @@ public class MoveControl : MonoBehaviour
         rb.AddForce(moveForward.normalized * moveSpeed, ForceMode.Impulse);
     }
 
+    public void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         //Jumppower = 0.0f;
         rb = GetComponent<Rigidbody>();
 
-        hitEnemy = false;
-
         this.animator = GetComponent<Animator>();
 
+        hitEnemy = false;
         //Debug.Assert(parentObj != null);
         //Debug.Assert(parentObj_ != null);
 
@@ -81,21 +90,19 @@ public class MoveControl : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(moveForward, transform.up);
             }
 
-        
+            //Vector3 direction = InputToDirection();
+            //float magnitude = direction.magnitude;
 
-        //Vector3 direction = InputToDirection();
-        //float magnitude = direction.magnitude;
-
-        //if (Mathf.Approximately(magnitude, 0f) == false)
-        //{
-        //    UpdateRotation(direction);
-        //}
+            //if (Mathf.Approximately(magnitude, 0f) == false)
+            //{
+            //    UpdateRotation(direction);
+            //}
 
 
-        //if (rb.velocity.y > 0.3f) 
-        //{ 
-        //    rb.velocity = new Vector3(rb.velocity.x, 0.3f, rb.velocity.z); 
-        //}
+            //if (rb.velocity.y > 0.3f) 
+            //{ 
+            //    rb.velocity = new Vector3(rb.velocity.x, 0.3f, rb.velocity.z); 
+            //}
 
         
 
