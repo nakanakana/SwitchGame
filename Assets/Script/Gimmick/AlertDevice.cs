@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class AlertDevice : MonoBehaviour
 {
-    private GameObject player;
+    [Header("プレイヤーをセット")]
+    public GameObject player;
+   
     private AudioSource audioSource;
+    [Header("個別に音を鳴らしたいならいれて")]
     public AudioClip sound;
-    private float dist = 0.0f;
-    private bool deviceFlag = false;
+ 
     private float aleartTime = 0.0f;
     [Header("来てほしい敵をセット")]
     public GameObject[] enemy;
+
+    private float dist = 0.0f;
+    private bool deviceFlag = false;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        //player = GameObject.Find("Player");
 
     }
 
@@ -31,7 +36,15 @@ public class AlertDevice : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && !Alert.instance.GetisAlert())
             {
-                Alert.instance.OnAleart();
+                if (sound != null)
+                {
+                    Alert.instance.OnAleart(sound);
+                }
+                else
+                {
+                    Alert.instance.OnAleart();
+                  
+                }
                 Alert.instance.CallEnemy(enemy, transform);
                 //aleartTime = 0.0f;
                 deviceFlag = true;

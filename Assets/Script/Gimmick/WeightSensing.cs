@@ -5,18 +5,15 @@ using UnityEngine;
 public class WeightSensing : MonoBehaviour
 {
     private AudioSource audioSource;
-    public AudioClip sound;
+    [Header("個別に音を鳴らしたいならいれて")]
+    public  AudioClip sound;
     private MeshRenderer mesh;
     private bool foundFlag = false;
-    private float countTime = 0.0f;
+   // private float countTime = 0.0f;
 
     [Header("来てほしい敵をセット")]
     public GameObject[] enemy;
   
-
-
-   
-
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +32,11 @@ public class WeightSensing : MonoBehaviour
     {
 
 
-        //ひとまず一定時間で鳴り止むようにしている。
+        
         if (foundFlag&&!audioSource.isPlaying)
         {
             audioSource.Stop();
-            countTime = 0.0f;
+            //countTime = 0.0f;
             foundFlag = false;
             // FlushController.instance.flushClear();
             // audioSource.Stop();
