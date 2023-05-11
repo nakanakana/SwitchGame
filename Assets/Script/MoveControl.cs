@@ -7,45 +7,35 @@ using UnityEngine.SceneManagement;
 
 public class MoveControl : MonoBehaviour
 {
-    //public enum MyState
-    //{
-    //    Normal,
-    //    Damage,
-    //    Attack
-    //};
-
     private Animator animator;
     private Rigidbody rb;
     private Vector3 moveForward;
-    public float moveSpeed;
-    private float velocityMax = 1.0f;
+    private Collider PlayerCollider;
 
     public new GameObject camera;
+    public static MoveControl instance;
+
+    private float velocityMax = 1.0f;
+    public float moveSpeed;
 
     float inputHorizontal = 0;
     float inputVertical = 0;
 
     private const float RotateSpeed = 720f;
-
     private const string key_isWalk = "IsWalk";
 
-    public static MoveControl instance;
 
     public bool hitEnemy = false;
+    private bool Grounded;//  地面に着地しているか判定する変数
+
 
     //[SerializeField]
     //private GameObject parentObj;
 
     //[SerializeField]
     //private GameObject parentObj_;
-    private bool Grounded;//  地面に着地しているか判定する変数
    // private float Jumppower;//  ジャンプ力
 
-    private void FixedUpdate()
-    {
-        if(!hitEnemy)
-        rb.AddForce(moveForward.normalized * moveSpeed, ForceMode.Impulse);
-    }
 
     public void Awake()
     {
@@ -63,11 +53,20 @@ public class MoveControl : MonoBehaviour
         this.animator = GetComponent<Animator>();
 
         hitEnemy = false;
+
+        PlayerCollider = GameObject.Find("Player").GetComponent<CapsuleCollider>();
+        PlayerCollider.enabled = true;
+
         //Debug.Assert(parentObj != null);
         //Debug.Assert(parentObj_ != null);
 
     }
 
+    private void FixedUpdate()
+    {
+        if(!hitEnemy)
+        rb.AddForce(moveForward.normalized * moveSpeed, ForceMode.Impulse);
+    }
     void Update()
     {
 
@@ -82,7 +81,6 @@ public class MoveControl : MonoBehaviour
 
         //animator.SetFloat("Speed", Mathf.Abs(moveForward.z));
 
-
         if (!hitEnemy)
         {
             if ((inputHorizontal != 0) || (inputVertical != 0))
@@ -92,19 +90,14 @@ public class MoveControl : MonoBehaviour
 
             //Vector3 direction = InputToDirection();
             //float magnitude = direction.magnitude;
-
             //if (Mathf.Approximately(magnitude, 0f) == false)
             //{
             //    UpdateRotation(direction);
             //}
-
-
             //if (rb.velocity.y > 0.3f) 
             //{ 
             //    rb.velocity = new Vector3(rb.velocity.x, 0.3f, rb.velocity.z); 
             //}
-
-        
 
             if (rb.velocity.x > velocityMax)
             {
@@ -137,8 +130,6 @@ public class MoveControl : MonoBehaviour
 
         if (!hitEnemy)
         {
-           
-       
             // ボタンを押下している
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -188,49 +179,54 @@ public class MoveControl : MonoBehaviour
             //animator.SetBool("Grounded", true);
         }
 
-        if (other.gameObject.tag == "Enemy")//  もしGroundというタグがついたオブジェクトに触れたら、
+      
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")// もしBulletというタグがついたオブジェクトに触れたら、
         {
             hitEnemy = true;
             animator.SetTrigger("IsDied");
+
+            gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
         }
+    }
+
+        //private Vector3 InputToDirection()
+        //{
+        //    Vector3 direction = new Vector3(0f, 0f, 0f);
+
+        //    if (Input.GetKey(KeyCode.D))
+        //    {
+        //        direction.x += 1f;
+        //    }
+
+        //    if (Input.GetKey(KeyCode.A))
+        //    {
+        //        direction.x -= 1f;
+        //    }
+
+        //    if (Input.GetKey(KeyCode.W))
+        //    {
+        //        direction.z += 1f;
+        //    }
+
+        //    if (Input.GetKey(KeyCode.S))
+        //    {
+        //        direction.z -= 1f;
+        //    }
+
+        //    return direction.normalized;
+        //}
+
+        //private void UpdateRotation(Vector3 direction)
+        //{
+        //    Quaternion from = transform.rotation;
+        //    Quaternion to = Quaternion.LookRotation(direction);
+        //    transform.rotation = Quaternion.RotateTowards(from, to, RotateSpeed * Time.deltaTime);
+        //}
 
 
     }
-
-    //private Vector3 InputToDirection()
-    //{
-    //    Vector3 direction = new Vector3(0f, 0f, 0f);
-
-    //    if (Input.GetKey(KeyCode.D))
-    //    {
-    //        direction.x += 1f;
-    //    }
-
-    //    if (Input.GetKey(KeyCode.A))
-    //    {
-    //        direction.x -= 1f;
-    //    }
-
-    //    if (Input.GetKey(KeyCode.W))
-    //    {
-    //        direction.z += 1f;
-    //    }
-
-    //    if (Input.GetKey(KeyCode.S))
-    //    {
-    //        direction.z -= 1f;
-    //    }
-
-    //    return direction.normalized;
-    //}
-
-    //private void UpdateRotation(Vector3 direction)
-    //{
-    //    Quaternion from = transform.rotation;
-    //    Quaternion to = Quaternion.LookRotation(direction);
-    //    transform.rotation = Quaternion.RotateTowards(from, to, RotateSpeed * Time.deltaTime);
-    //}
-
-
-}
 
