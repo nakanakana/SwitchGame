@@ -4198,7 +4198,7 @@ MonoBehaviour:
   quitRange: 4
   tracking: 0
   searchAngle: 100
-  ball: {fileID: 0}
+  ball: {fileID: 6401256524832047574, guid: 0bc408923dead0c41b22c93fd355630f, type: 3}
 --- !u!195 &1520568838
 NavMeshAgent:
   m_ObjectHideFlags: 0
