@@ -4,6 +4,7 @@ using UnityEngine;
 //NavMeshAgent使うときに必要
 using UnityEngine.AI;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 //オブジェクトにNavMeshAgentコンポーネントを設置
 [RequireComponent(typeof(NavMeshAgent))]
@@ -23,6 +24,9 @@ public class Patrol : MonoBehaviour
     public bool tracking = false;
     [SerializeField]
     private float searchAngle = 100f;
+    [SerializeField] GameObject ball;
+    private float ballSpeed = 10.0f;
+    private float time = 1.0f;
     public void Awake()
     {
         if(instance == null)
@@ -84,21 +88,27 @@ public class Patrol : MonoBehaviour
 
             //Playerを目標とする
             agent.destination = playerPos;
-
+            EnemyShot();
         }
         else
         {
             //PlayerがtrackingRangeより近づいたら追跡開始
             if (distance < trackingRange && angle <= searchAngle)
+            {
+                EnemyShot();
                 tracking = true;
-
+            }
 
             // エージェントが現目標地点に近づいてきたら、
             // 次の目標地点を選択します
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
         }
-        if (tracking) EnemyAttack.instance.EnemyShot();
+        if (tracking) { 
+            
+            Debug.Log("プレイヤーがおる");
+        }
+
     }
     public void AlertCome(Transform alertpos)
     {
@@ -123,5 +133,20 @@ public class Patrol : MonoBehaviour
         Handles.color = new Color(1f, 0, 0, 0.2f);
         Handles.DrawSolidArc(transform.position, Vector3.up, Quaternion.Euler(0f, -searchAngle, 0f) * transform.forward, searchAngle * 2f, trackingRange);
     }
+    void EnemyShot()
+    {
+        time -= Time.deltaTime;
+        if (time <= 0)
+        {
+            BallShot();
+            time = 1.0f;
+        }
+    }
 
+    void BallShot()
+    {
+        GameObject shotObj = Instantiate(ball, transform.position, Quaternion.identity);
+        shotObj.GetComponent<Rigidbody>().velocity = transform.forward * ballSpeed;
+        Destroy(shotObj, 2.0f);
+    }
 }

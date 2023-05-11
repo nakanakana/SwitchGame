@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] GameObject ball;
     private float ballSpeed = 10.0f;
     private float time = 1.0f;
-    bool PhitFlag = false;
+    //bool PhitFlag = false;
     public static EnemyAttack instance;
 
     public void Awake()
@@ -25,8 +25,8 @@ public class EnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         //if (Patrol.instance.tracking)
         //{
         //    //transform.LookAt(player.transform);
@@ -37,7 +37,7 @@ public class EnemyAttack : MonoBehaviour
         //        time = 1.0f;
         //    }
         //}
-    }
+    //}
 
     public void EnemyShot()
     {
@@ -56,9 +56,9 @@ public class EnemyAttack : MonoBehaviour
         Destroy(shotObj, 2.0f);
     }
 
-    bool PlayerHit()
-    {
-        if (ball.transform.position == player.transform.position) PhitFlag = true;
-        return PhitFlag;
-    }
+    //public bool PlayerHit()
+    //{
+    //    if (ball.transform.position == player.transform.position) PhitFlag = true;
+    //    return PhitFlag;
+    //}
 }

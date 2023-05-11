@@ -24,13 +24,13 @@ public class EnemyCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(Count);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Count);
+        
 
         if (Count <= 0)
         {
@@ -46,6 +46,6 @@ public class EnemyCount : MonoBehaviour
     {
        
        Count--;
-
+        Debug.Log(Count);
     }
 }
