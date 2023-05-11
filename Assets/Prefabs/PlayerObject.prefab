@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6606465104077283701}
   - component: {fileID: 8887174883377820774}
   m_Layer: 6
-  m_Name: 'Player '
+  m_Name: PlayerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 925f3b67286314147bfd4ea5bd3331d2, type: 3}
       propertyPath: m_Name
-      value: 'player_anim_idle '
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 925f3b67286314147bfd4ea5bd3331d2, type: 3}
       propertyPath: m_Layer
