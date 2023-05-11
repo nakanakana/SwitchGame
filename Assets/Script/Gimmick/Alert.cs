@@ -5,7 +5,9 @@ using UnityEngine;
 public class Alert : MonoBehaviour
 {
     public static Alert instance;
+    [Header("アラート音をセット。個別に指定しないならこれが鳴る")]
     public AudioClip sound;  
+
     private AudioSource audioSource;
     private bool isAlert = false; //鳴っているかどうか
     private bool isCall = false;　//敵を呼んでいるかどうか
@@ -31,8 +33,9 @@ public class Alert : MonoBehaviour
         //警報が鳴っていれば画面を点滅させる
         if (isAlert)
         {
-            FlushController.instance.flush();
+            //FlushController.instance.flush();
         }
+
 
     }
 
@@ -48,7 +51,7 @@ public class Alert : MonoBehaviour
 
     }
 
-    //外部から音声を指定したい場合
+    //外部から音声を指定した場合
     public void OnAleart(AudioClip so)
     {
         //まだ鳴っていなければ鳴らす
@@ -66,7 +69,7 @@ public class Alert : MonoBehaviour
     //警報を止める
     public void ReleaseAleart()
     {    
-        FlushController.instance.flushClear();
+       // FlushController.instance.flushClear();
         audioSource.Stop();
         isAlert = false;
     }
