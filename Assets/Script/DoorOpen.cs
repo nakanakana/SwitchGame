@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
-    [SerializeField] GameObject LDoor;
-    [SerializeField] GameObject RDoor;
-
+    [SerializeField] GameObject Door;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,14 +21,14 @@ public class DoorOpen : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            LDoor.SetActive(false);
-            RDoor.SetActive(false);
+            //animator.SetTrigger("DoorOpen");
+            animator.SetBool("Open", true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        LDoor.SetActive(true);
-        RDoor.SetActive(true);
+        //animator.ResetTrigger("DoorOpen");
+        animator.SetBool("Open", false);
     }
 }
