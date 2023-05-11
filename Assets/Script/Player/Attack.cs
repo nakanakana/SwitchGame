@@ -24,17 +24,21 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(MoveControl.instance.hitEnemy == false)
         {
-            //animator.SetTrigger("IsAttacked");
 
-            //コライダーをオンにする
-            swordCollider.enabled = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                //animator.SetTrigger("IsAttacked");
 
-            //一定時間後にコライダーの機能をオフにする
-            Invoke("ColliderReset", attackTime);
-        }
+                //コライダーをオンにする
+                swordCollider.enabled = true;
+
+                //一定時間後にコライダーの機能をオフにする
+                Invoke("ColliderReset", attackTime);
+            }
         
+        }
     }
 
     private void ColliderReset()
