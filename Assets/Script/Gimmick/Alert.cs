@@ -71,6 +71,7 @@ public class Alert : MonoBehaviour
     {    
        // FlushController.instance.flushClear();
         audioSource.Stop();
+        ReleaseEnemy();
         isAlert = false;
     }
 
@@ -81,18 +82,30 @@ public class Alert : MonoBehaviour
 
     public void CallEnemy(GameObject[] enemies,Transform tr)
     {
-            for (int i = 0; i < enemies.Length; ++i)
+        enemy = enemies;
+        for (int i = 0; i < enemies.Length; ++i)
+        {
+            if (enemies[i] != null)
             {
-                if (enemies[i] != null)
-                {
-                    enemies[i].GetComponentInChildren<Patrol>().AlertCome(tr);
-                }
+                enemies[i].GetComponentInChildren<Patrol>().AlertCome(tr);
             }
-           
-        
+        }
+    }
+
+
+    public void ReleaseEnemy()
+    {
+        for (int i = 0; i < enemy.Length; ++i)
+        {
+            if (enemy[i] != null)
+            {
+                enemy[i].GetComponentInChildren<Patrol>().Return();
+            }
+        }
 
     }
-  
+
+
 }
 
 

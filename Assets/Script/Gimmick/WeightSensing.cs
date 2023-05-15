@@ -5,9 +5,13 @@ using UnityEngine;
 public class WeightSensing : MonoBehaviour
 {
     private AudioSource audioSource;
-    [Header("個別に音を鳴らしたいならいれて")]
+    //[Header("個別に音を指定したいならいれて")]
+    [Header("これは個別に鳴らすようにしているので音を指定して")]
+    [Header("AudioSourceの方のLoopにチェック入れてください")]
     public  AudioClip sound;
+
     private MeshRenderer mesh;
+
     private bool foundFlag = false;
    // private float countTime = 0.0f;
 
@@ -15,17 +19,19 @@ public class WeightSensing : MonoBehaviour
     public GameObject[] enemy;
   
 
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
        
+
         
-        mesh = GetComponent<MeshRenderer>();
-        if (mesh.enabled)
-        {
-            mesh.enabled = false;
-        }
+        //mesh = GetComponent<MeshRenderer>();
+        //if (mesh.enabled)
+        //{
+        //    mesh.enabled = false;
+        //}
     }
     // Update is called once per frame
     void Update()
@@ -33,15 +39,15 @@ public class WeightSensing : MonoBehaviour
 
 
         
-        if (foundFlag&&!audioSource.isPlaying)
-        {
-            audioSource.Stop();
-            //countTime = 0.0f;
-            foundFlag = false;
-            // FlushController.instance.flushClear();
-            // audioSource.Stop();
+        //if (foundFlag&&!audioSource.isPlaying)
+        //{
+        //    audioSource.Stop();
+        //    //countTime = 0.0f;
+        //    foundFlag = false;
+        //    // FlushController.instance.flushClear();
+        //    // audioSource.Stop();
 
-        }
+        //}
         //見つかっているなら鳴っている時間のカウントを始める   
         //if (foundFlag)
         //{
@@ -63,13 +69,26 @@ public class WeightSensing : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (!foundFlag)
-            {
-                audioSource.clip = sound;
-                audioSource.Play();
-                Alert.instance.CallEnemy(enemy, transform);
-                foundFlag = true;            
-            }
+                    
+            audioSource.clip = sound;
+            audioSource.Play();
+            Alert.instance.CallEnemy(enemy, transform);
+            foundFlag = true;            
+            
+            // Alert.instance.OnAleart();
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+           
+            audioSource.Stop();
+            //countTime = 0.0f;
+            foundFlag = false;
+            Alert.instance.ReleaseEnemy();
             // Alert.instance.OnAleart();
         }
     }
