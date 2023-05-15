@@ -8,15 +8,26 @@ public class AlertDevice : MonoBehaviour
     public GameObject player;
    
     private AudioSource audioSource;
-    [Header("個別に音を鳴らしたいならいれて")]
+    [Header("個別に音を指定したいならいれて")]
     public AudioClip sound;
  
-    private float aleartTime = 0.0f;
+    private float aleartCount= 0.0f;
     [Header("来てほしい敵をセット")]
     public GameObject[] enemy;
 
+    [Header("何秒間鳴らし続けるか")]
+    public float aleartTime;
+
+    
+
+    //鳴らし手との距離保存用
     private float dist = 0.0f;
+
+    //デバイスが使用状況かどうか true : 使用中 false : 未使用
     private bool deviceFlag = false;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +41,7 @@ public class AlertDevice : MonoBehaviour
         dist = Vector3.Distance(player.transform.position, this.transform.position);
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit hit;
-        ;
+        
         if (dist < 1.5f)
         {
 
@@ -53,18 +64,18 @@ public class AlertDevice : MonoBehaviour
 
         if (deviceFlag)
         {
-            aleartTime += Time.deltaTime;
+            aleartCount += Time.deltaTime;
             
         }
-        if (aleartTime >= 7)
+        if (aleartCount >= aleartTime)
         {
             //foundFlag = false;
-            aleartTime = 0.0f;
+            aleartCount = 0.0f;
             //FlushController.instance.flushClear();
             Alert.instance.ReleaseAleart();
             deviceFlag = false;
         }
-        Debug.Log(aleartTime);
+        Debug.Log(aleartCount);
     }
     private void CallEnemy()
     {
