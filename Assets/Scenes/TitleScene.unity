@@ -267,7 +267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330784885}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d819086de653bb48974728f70b75f49, type: 3}
   m_Name: 
@@ -530,6 +530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98a5029b01af7e44a33fc5269bd42ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad:
+    sceneAsset: {fileID: 102900000, guid: bb2d913d59735854aa856351d993647a, type: 3}
+    scenePath: Assets/Scenes/stage1.unity
 --- !u!4 &1837220537
 Transform:
   m_ObjectHideFlags: 0

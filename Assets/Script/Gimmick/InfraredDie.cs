@@ -9,7 +9,7 @@ public class InfraredDie : MonoBehaviour
     private LineRenderer lr;
     private AudioSource audioSource;
     private bool foundFlag = false;
-    private float countTime = 0.0f;
+   // private float countTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClickSceneChange : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
-    [SerializeField] private SceneReference sceneToLoad;
 
+    private string nowScene;
+    public Scene scene;
+    
+    public string nextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +19,6 @@ public class ClickSceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))    // 左マウスボタンをクリックしたら
-        {
-            SceneManager.LoadScene(sceneToLoad);
-        }
+        
     }
 }
