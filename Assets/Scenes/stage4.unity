@@ -478,7 +478,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69182363}
-  - component: {fileID: 69182362}
   m_Layer: 0
   m_Name: GameObject (3)
   m_TagString: Cube
@@ -486,18 +485,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &69182362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69182361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3e1d92fd1ca86a4ab95b8872579d9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &69182363
 Transform:
   m_ObjectHideFlags: 0
@@ -6509,7 +6496,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189755844}
-  - component: {fileID: 1189755843}
   m_Layer: 0
   m_Name: GameObject (4)
   m_TagString: Cube
@@ -6517,18 +6503,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &1189755843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189755842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3e1d92fd1ca86a4ab95b8872579d9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1189755844
 Transform:
   m_ObjectHideFlags: 0
@@ -7148,7 +7122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1287363073}
-  - component: {fileID: 1287363072}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Cube
@@ -7156,18 +7129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &1287363072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287363071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3e1d92fd1ca86a4ab95b8872579d9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1287363073
 Transform:
   m_ObjectHideFlags: 0
