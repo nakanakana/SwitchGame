@@ -20,7 +20,7 @@ public class MoveControl : MonoBehaviour
 
     float inputHorizontal = 0;
     float inputVertical = 0;
-    float steptimer = 0;
+    float nowSceneTimer = 0;
 
     private const float RotateSpeed = 720f;
     private const string key_isWalk = "IsWalk";
@@ -149,52 +149,32 @@ public class MoveControl : MonoBehaviour
             }
         }
 
-        // 経過時間をカウント
+        // Player死んだら
         if (hitEnemy == true)
         {
-            steptimer += Time.deltaTime;
+            //シーンタイマーに足す
+            nowSceneTimer += Time.deltaTime;
         }
-        if (steptimer >= 3.0f)
+        //シーンタイマーが3秒過ぎたら
+        if (nowSceneTimer >= 3.0f)
         {
+            //シーンリロード
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        //if (Grounded == true)//  もし、Groundedがtrueなら、
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Space))//  もし、スペースキーがおされたなら、  
-        //    {
-        //        //animator.SetTrigger("Jump");
-        //        Grounded = false;//  Groundedをfalseにする
-        //                         //animator.SetBool("Grounded", false);
-        //        rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);//  上にJumpPower分力をかける
-        //    }
-        //}
-
-        //rb.velocity = moveForward.normalized;
 
        
 }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.name == "GameOverArea")
-    //    {
-    //        //rb.transform.position = new Vector3(1.44f, 2.0f, -3.05f);
-    //        SceneManager.LoadScene("SampleScene");
-    //    }
-    //}
-
+  
     void OnCollisionEnter(Collision other)//  地面に触れた時の処理
     {
         if (other.gameObject.tag == "Ground")//  もしGroundというタグがついたオブジェクトに触れたら、
         {
-            Grounded = true;//  Groundedをtrueにする
-            //animator.SetBool("Grounded", true);
+            Grounded = true;//  Groundedをtrueにする    
         }
         if (other.gameObject.tag == "Cube")//  もしCubeというタグがついたオブジェクトに触れたら、
         {
-            Grounded = true;//  Groundedをtrueにする
-            //animator.SetBool("Grounded", true);
+            Grounded = true;
         }
 
 
@@ -228,41 +208,6 @@ public class MoveControl : MonoBehaviour
         }
 
     }
-
-
-    //private Vector3 InputToDirection()
-    //{
-    //    Vector3 direction = new Vector3(0f, 0f, 0f);
-
-    //    if (Input.GetKey(KeyCode.D))
-    //    {
-    //        direction.x += 1f;
-    //    }
-
-    //    if (Input.GetKey(KeyCode.A))
-    //    {
-    //        direction.x -= 1f;
-    //    }
-
-    //    if (Input.GetKey(KeyCode.W))
-    //    {
-    //        direction.z += 1f;
-    //    }
-
-    //    if (Input.GetKey(KeyCode.S))
-    //    {
-    //        direction.z -= 1f;
-    //    }
-
-    //    return direction.normalized;
-    //}
-
-    //private void UpdateRotation(Vector3 direction)
-    //{
-    //    Quaternion from = transform.rotation;
-    //    Quaternion to = Quaternion.LookRotation(direction);
-    //    transform.rotation = Quaternion.RotateTowards(from, to, RotateSpeed * Time.deltaTime);
-    //}
 
 
 }
