@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 7461099687903474433}
   - component: {fileID: 7461099687903474447}
   m_Layer: 0
-  m_Name: AutoDoor
+  m_Name: AutoDoor(Large)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
