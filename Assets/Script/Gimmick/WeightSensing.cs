@@ -88,7 +88,7 @@ public class WeightSensing : MonoBehaviour
             audioSource.Stop();
             //countTime = 0.0f;
             foundFlag = false;
-            Alert.instance.ReleaseEnemy();
+           // Alert.instance.ReleaseEnemy();
             // Alert.instance.OnAleart();
         }
     }
