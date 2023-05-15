@@ -63,7 +63,6 @@ public class Patrol : MonoBehaviour
         // 配列内の次の位置を目標地点に設定し、
         // 必要ならば出発地点にもどります
         destPoint = (destPoint + 1) % points.Length;
-        animator.SetBool("Walk", true);
     }
 
 
@@ -83,13 +82,11 @@ public class Patrol : MonoBehaviour
             if (distance > quitRange)
             {
                 tracking = false;
-                animator.SetBool("Walk", true);
             }
 
             //Playerを目標とする
             agent.destination = playerPos;
             EnemyShot();
-            animator.SetBool("Attack", true);
         }
         else
         {
@@ -98,7 +95,6 @@ public class Patrol : MonoBehaviour
             {
                 EnemyShot();
                 tracking = true;
-                animator.SetBool("Attack", true);
             }
 
             // エージェントが現目標地点に近づいてきたら、
