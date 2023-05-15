@@ -222,7 +222,11 @@ public class MoveControl : MonoBehaviour
             Debug.Log(hitEnemy);
             return hitEnemy;
         }
-        
+        set
+        {
+            hitEnemy = value;
+        }
+
     }
 
 
