@@ -121,6 +121,14 @@ public class Patrol : MonoBehaviour
             tracking = true;
         if (agent.destination == alertpos.position && tracking == false) { GotoNextPoint(); }
     }
+
+    public void Return()
+    {
+        if (distance < trackingRange)
+            tracking = true;
+        if (tracking == false) GotoNextPoint();
+    }
+
     void OnDrawGizmosSelected()
     {
         //trackingRangeの範囲を赤いワイヤーフレームで示す
