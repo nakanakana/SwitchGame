@@ -4,18 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class InfraredDie : MonoBehaviour
 {
-    public AudioClip sound;
+    //public AudioClip sound;
     public float maxDistance = 50f;
     private LineRenderer lr;
     private AudioSource audioSource;
     private bool foundFlag = false;
-   // private float countTime = 0.0f;
+
+    [Header("プレイヤーをセット")]
+    public GameObject player;
+
+    private MoveControl moveControl;
+    // private float countTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
         lr = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
-
+        moveControl = GetComponent<MoveControl>();
     }
 
     // Update is called once per frame
@@ -38,8 +43,7 @@ public class InfraredDie : MonoBehaviour
 
             if (hit.transform.CompareTag("Player") && !foundFlag)
             {
-             
-                SceneManager.LoadScene("SampleScene");
+                moveControl.HitEnemy = true;     
                
             }
         }

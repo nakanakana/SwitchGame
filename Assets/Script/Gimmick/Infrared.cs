@@ -45,7 +45,7 @@ public class Infrared : MonoBehaviour
                 //audioSource.clip = sound;
                 //audioSource.Play();
              
-                Alert.instance.OnAleart();
+                Alert.instance.OnAleart(false);
                 Alert.instance.CallEnemy(enemy, transform);
                 foundFlag = true;
             }

@@ -39,32 +39,56 @@ public class Alert : MonoBehaviour
 
     }
 
-    public void OnAleart()
+    public void OnAleart(bool loopFlag)
     {
         //まだ鳴っていなければ鳴らす
         if (!isAlert)
         {
             audioSource.clip = sound;
+            audioSource.loop = loopFlag;
             audioSource.Play();
             isAlert = true;
+            
         }
 
     }
 
     //外部から音声を指定した場合
-    public void OnAleart(AudioClip so)
+    public void OnAleart(AudioClip so,bool loopFlag)
     {
         //まだ鳴っていなければ鳴らす
         if (!isAlert)
         {
             audioSource.clip = so;
+            audioSource.loop = loopFlag;
             audioSource.Play();
             isAlert = true;
         }
 
     }
 
+    //重複して流したい場合
+    public void OnShotAleart(AudioClip so, bool loopFlag)
+    {
+       
 
+       
+        audioSource.clip = so;
+        audioSource.loop = loopFlag;
+        audioSource.PlayOneShot(so);
+        isAlert = true;
+        
+
+    }
+
+    //public void OnShotRelease(AudioClip so, bool loopFlag)
+    //{
+    //    audioSource.
+    //    ReleaseEnemy();
+    //    isAlert = false;
+
+
+    //}
     //画面の点滅を終わらせる
     //警報を止める
     public void ReleaseAleart()

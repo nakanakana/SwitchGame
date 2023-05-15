@@ -6,9 +6,11 @@ public class WeightSensing : MonoBehaviour
 {
     private AudioSource audioSource;
     //[Header("個別に音を指定したいならいれて")]
-    [Header("これは個別に鳴らすようにしているので音を指定して")]
-    [Header("AudioSourceの方のLoopにチェック入れてください")]
+    [Header("音を指定するならここに音を入れて")]
     public  AudioClip sound;
+
+    
+    private bool loopFlag = true;
 
     private MeshRenderer mesh;
 
@@ -25,13 +27,6 @@ public class WeightSensing : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
        
-
-        
-        //mesh = GetComponent<MeshRenderer>();
-        //if (mesh.enabled)
-        //{
-        //    mesh.enabled = false;
-        //}
     }
     // Update is called once per frame
     void Update()
@@ -39,27 +34,7 @@ public class WeightSensing : MonoBehaviour
 
 
         
-        //if (foundFlag&&!audioSource.isPlaying)
-        //{
-        //    audioSource.Stop();
-        //    //countTime = 0.0f;
-        //    foundFlag = false;
-        //    // FlushController.instance.flushClear();
-        //    // audioSource.Stop();
-
-        //}
-        //見つかっているなら鳴っている時間のカウントを始める   
-        //if (foundFlag)
-        //{
-        //    countTime += Time.deltaTime;
-        //    // FlushController.instance.flush();
-            
-        //}
-      
-           
-
-       
-        //Debug.Log(foundFlag);
+ 
 
     }
 
@@ -69,9 +44,10 @@ public class WeightSensing : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-                    
+
             audioSource.clip = sound;
             audioSource.Play();
+          //  Alert.instance.OnAleart(sound,loopFlag);
             Alert.instance.CallEnemy(enemy, transform);
             foundFlag = true;            
             
@@ -84,12 +60,12 @@ public class WeightSensing : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           
+
             audioSource.Stop();
             //countTime = 0.0f;
             foundFlag = false;
-           // Alert.instance.ReleaseEnemy();
-            // Alert.instance.OnAleart();
+            //Alert.instance.ReleaseEnemy();
+            //Alert.instance.ReleaseAleart();
         }
     }
 

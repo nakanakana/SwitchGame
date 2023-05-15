@@ -18,7 +18,8 @@ public class AlertDevice : MonoBehaviour
     [Header("何秒間鳴らし続けるか")]
     public float aleartTime;
 
-    
+    [Header("ループさせるか否か(デフォルトはループしない)")]
+    public bool loopFlag;
 
     //鳴らし手との距離保存用
     private float dist = 0.0f;
@@ -49,11 +50,11 @@ public class AlertDevice : MonoBehaviour
             {
                 if (sound != null)
                 {
-                    Alert.instance.OnAleart(sound);
+                    Alert.instance.OnAleart(sound,loopFlag);
                 }
                 else
                 {
-                    Alert.instance.OnAleart();
+                    Alert.instance.OnAleart(loopFlag);
                   
                 }
                 Alert.instance.CallEnemy(enemy, transform);
