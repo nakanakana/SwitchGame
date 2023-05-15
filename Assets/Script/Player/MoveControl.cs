@@ -150,7 +150,7 @@ public class MoveControl : MonoBehaviour
         }
 
         // 経過時間をカウント
-        if (pDead == true)
+        if (hitEnemy == true)
         {
             steptimer += Time.deltaTime;
         }
@@ -207,7 +207,7 @@ public class MoveControl : MonoBehaviour
             hitEnemy = true;
             animator.SetTrigger("IsDied");
 
-            pDead = true;
+            //pDead = true;
             gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
 
         }
