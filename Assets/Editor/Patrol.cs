@@ -44,7 +44,7 @@ public class Patrol : MonoBehaviour
         agent.autoBraking = true;
 
         GotoNextPoint();
-
+        
         //追跡したいオブジェクトの名前を入れる
         //player = GameObject.Find("Player");
         player = GameObject.FindWithTag("Player");
@@ -63,7 +63,7 @@ public class Patrol : MonoBehaviour
         // 配列内の次の位置を目標地点に設定し、
         // 必要ならば出発地点にもどります
         destPoint = (destPoint + 1) % points.Length;
-        
+        animator.SetBool("Walk", true);
     }
 
 
@@ -83,12 +83,13 @@ public class Patrol : MonoBehaviour
             if (distance > quitRange)
             {
                 tracking = false;
-                
+                animator.SetBool("Walk", true);
             }
 
             //Playerを目標とする
             agent.destination = playerPos;
             EnemyShot();
+            animator.SetBool("Attack", true);
         }
         else
         {
@@ -97,12 +98,15 @@ public class Patrol : MonoBehaviour
             {
                 EnemyShot();
                 tracking = true;
+                animator.SetBool("Attack", true);
             }
 
             // エージェントが現目標地点に近づいてきたら、
             // 次の目標地点を選択します
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            {
                 GotoNextPoint();
+            }
         }
         //if (tracking) { 
             
