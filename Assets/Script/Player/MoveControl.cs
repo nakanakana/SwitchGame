@@ -37,12 +37,12 @@ public class MoveControl : MonoBehaviour
 
     //[SerializeField]
     //private GameObject parentObj_;
-   // private float Jumppower;//  ジャンプ力
+    // private float Jumppower;//  ジャンプ力
 
 
     public void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -68,8 +68,8 @@ public class MoveControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!hitEnemy)
-        rb.AddForce(moveForward.normalized * moveSpeed, ForceMode.Impulse);
+        if (!hitEnemy)
+            rb.AddForce(moveForward.normalized * moveSpeed, ForceMode.Impulse);
     }
     void Update()
     {
@@ -123,15 +123,15 @@ public class MoveControl : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
             }
 
-            
+
         }
-        
+
 
         //Animation
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("IsAttacked");
-            
+
         }
 
         if (!hitEnemy)
@@ -150,7 +150,7 @@ public class MoveControl : MonoBehaviour
         }
 
         // 経過時間をカウント
-        if(pDead == true)
+        if (pDead == true)
         {
             steptimer += Time.deltaTime;
         }
@@ -171,7 +171,9 @@ public class MoveControl : MonoBehaviour
         //}
 
         //rb.velocity = moveForward.normalized;
-    }
+
+       
+}
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -195,7 +197,7 @@ public class MoveControl : MonoBehaviour
             //animator.SetBool("Grounded", true);
         }
 
-      
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -207,44 +209,57 @@ public class MoveControl : MonoBehaviour
 
             pDead = true;
             gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
-            
+
         }
+
+
+}
+    public bool HitEnemy
+    {
+        get
+        {
+            Debug.Log("Accessed to parameter.");
+            Debug.Log(hitEnemy);
+            return hitEnemy;
+        }
+        
     }
 
-        //private Vector3 InputToDirection()
-        //{
-        //    Vector3 direction = new Vector3(0f, 0f, 0f);
 
-        //    if (Input.GetKey(KeyCode.D))
-        //    {
-        //        direction.x += 1f;
-        //    }
+    //private Vector3 InputToDirection()
+    //{
+    //    Vector3 direction = new Vector3(0f, 0f, 0f);
 
-        //    if (Input.GetKey(KeyCode.A))
-        //    {
-        //        direction.x -= 1f;
-        //    }
+    //    if (Input.GetKey(KeyCode.D))
+    //    {
+    //        direction.x += 1f;
+    //    }
 
-        //    if (Input.GetKey(KeyCode.W))
-        //    {
-        //        direction.z += 1f;
-        //    }
+    //    if (Input.GetKey(KeyCode.A))
+    //    {
+    //        direction.x -= 1f;
+    //    }
 
-        //    if (Input.GetKey(KeyCode.S))
-        //    {
-        //        direction.z -= 1f;
-        //    }
+    //    if (Input.GetKey(KeyCode.W))
+    //    {
+    //        direction.z += 1f;
+    //    }
 
-        //    return direction.normalized;
-        //}
+    //    if (Input.GetKey(KeyCode.S))
+    //    {
+    //        direction.z -= 1f;
+    //    }
 
-        //private void UpdateRotation(Vector3 direction)
-        //{
-        //    Quaternion from = transform.rotation;
-        //    Quaternion to = Quaternion.LookRotation(direction);
-        //    transform.rotation = Quaternion.RotateTowards(from, to, RotateSpeed * Time.deltaTime);
-        //}
+    //    return direction.normalized;
+    //}
+
+    //private void UpdateRotation(Vector3 direction)
+    //{
+    //    Quaternion from = transform.rotation;
+    //    Quaternion to = Quaternion.LookRotation(direction);
+    //    transform.rotation = Quaternion.RotateTowards(from, to, RotateSpeed * Time.deltaTime);
+    //}
 
 
-    }
+}
 
