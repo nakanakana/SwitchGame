@@ -23,7 +23,6 @@ public class DoorOpen : MonoBehaviour
         {
             //animator.SetTrigger("DoorOpen");
             animator.SetBool("Open", true);
-            Debug.Log("“G‚ª‚¢‚é");
         }
     }
 
