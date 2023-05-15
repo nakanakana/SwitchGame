@@ -20,12 +20,15 @@ public class MoveControl : MonoBehaviour
 
     float inputHorizontal = 0;
     float inputVertical = 0;
+    float steptimer = 0;
 
     private const float RotateSpeed = 720f;
     private const string key_isWalk = "IsWalk";
 
 
     public bool hitEnemy = false;
+    public bool pDead;
+
     private bool Grounded;//  地面に着地しているか判定する変数
 
 
@@ -56,6 +59,7 @@ public class MoveControl : MonoBehaviour
 
         PlayerCollider = GameObject.Find("Player").GetComponent<CapsuleCollider>();
         PlayerCollider.enabled = true;
+        SceneManager.GetActiveScene();
 
         //Debug.Assert(parentObj != null);
         //Debug.Assert(parentObj_ != null);
@@ -118,6 +122,8 @@ public class MoveControl : MonoBehaviour
             {
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
             }
+
+            
         }
         
 
@@ -141,6 +147,16 @@ public class MoveControl : MonoBehaviour
                 // RunからWaitに遷移する
                 this.animator.SetBool(key_isWalk, false);
             }
+        }
+
+        // 経過時間をカウント
+        if(pDead == true)
+        {
+            steptimer += Time.deltaTime;
+        }
+        if (steptimer >= 3.0f)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         //if (Grounded == true)//  もし、Groundedがtrueなら、
@@ -189,7 +205,9 @@ public class MoveControl : MonoBehaviour
             hitEnemy = true;
             animator.SetTrigger("IsDied");
 
+            pDead = true;
             gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
+            
         }
     }
 
