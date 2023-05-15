@@ -18,8 +18,8 @@ public class AlertDevice : MonoBehaviour
     [Header("何秒間鳴らし続けるか")]
     public float aleartTime;
 
-    [Header("ループさせるか否か(デフォルトはループしない)")]
-    public bool loopFlag;
+    //[Header("ループさせるか否か(デフォルトはループしない)")]
+    private bool loopFlag;
 
     //鳴らし手との距離保存用
     private float dist = 0.0f;
