@@ -2949,6 +2949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e1d92fd1ca86a4ab95b8872579d9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleObject: {fileID: 6891548675796570133, guid: 13f9a73b3b0dc13418ee4b84fa662a15, type: 3}
 --- !u!4 &1140811717
 Transform:
   m_ObjectHideFlags: 0
@@ -3503,7 +3504,7 @@ MonoBehaviour:
   quitRange: 4
   tracking: 0
   searchAngle: 100
-  ball: {fileID: 0}
+  ball: {fileID: 6401256524832047574, guid: 0bc408923dead0c41b22c93fd355630f, type: 3}
 --- !u!114 &1289272524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3544,7 +3545,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1300288242
 GameObject:
@@ -4265,7 +4266,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &1520568843
 MonoBehaviour:
@@ -5103,6 +5104,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2116446895}
+    - target: {fileID: 2602671183851544069, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
+      propertyPath: particleObject
+      value: 
+      objectReference: {fileID: 3846641421835638271, guid: 46e6ade6d7f916640b30bf9f58fecf71, type: 3}
     - target: {fileID: 4589035896565002255, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: m_RootOrder
       value: 3
