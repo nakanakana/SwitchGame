@@ -18,6 +18,7 @@ public class SwitchObj : MonoBehaviour
     static public SwitchObj instance;
     GameObject gameObject1 = null;
     GameObject gameObject2 = null;
+    public GameObject particleObject;
     //public GameObject firstObject;
     //public GameObject secondObject;
 
@@ -44,8 +45,6 @@ public class SwitchObj : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1))
             {
-                
-
                 gameObject2 = hit.collider.gameObject;
             }
         }
@@ -56,6 +55,7 @@ public class SwitchObj : MonoBehaviour
              //gameObject1.CompareTag("Cube") && gameObject2.name == ("player_anim_idle"))
             {
                 SwapObj(gameObject1, gameObject2);
+                Instantiate(particleObject, gameObject2.transform.position, Quaternion.identity);
                 clickcnt = 0;
                 gameObject2 = null;
             }
@@ -154,6 +154,7 @@ public class SwitchObj : MonoBehaviour
         Vector3 tmp = gameObject1.transform.position;
         gameObject1.transform.position = gameObject2.transform.position;
         gameObject2.transform.position = tmp;
+        
 
         //Vector3 tmp = firstObject.transform.position;
         //firstObject.transform.position = secondObject.transform.position;
