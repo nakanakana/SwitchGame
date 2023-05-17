@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HitSword : MonoBehaviour
 {
+    public GameObject particleObject;
     //private Transform animationTransform;
     //private BoxCollider BoxCol;
     //private CapsuleCollider CapCol;
@@ -95,8 +96,8 @@ public class HitSword : MonoBehaviour
         //UŒ‚‚µ‚½‘Šè‚ªEnemy‚Ìê‡
         if (other.CompareTag("Enemy"))
         {
-
-            Destroy(other.gameObject, 0.4f);
+            Instantiate(particleObject, other.transform.position, Quaternion.identity);
+            Destroy(other.gameObject, 0.4f);      
 
         }
     }
