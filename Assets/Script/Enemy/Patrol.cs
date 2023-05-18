@@ -150,11 +150,15 @@ public class Patrol : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, quitRange);
 
     }
+
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Handles.color = new Color(1f, 0, 0, 0.2f);
         Handles.DrawSolidArc(transform.position, Vector3.up, Quaternion.Euler(0f, -searchAngle, 0f) * transform.forward, searchAngle * 2f, trackingRange);
     }
+#endif
+
     void EnemyShot()
     {
         time -= Time.deltaTime;
