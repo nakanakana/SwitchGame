@@ -55,7 +55,8 @@ public class SwitchObj : MonoBehaviour
              //gameObject1.CompareTag("Cube") && gameObject2.name == ("player_anim_idle"))
             {
                 SwapObj(gameObject1, gameObject2);
-                Instantiate(particleObject, gameObject2.transform.position, Quaternion.identity);
+                GameObject effect = Instantiate(particleObject, gameObject2.transform.position, Quaternion.identity);
+                effect.transform.forward = Vector2.up;
                 clickcnt = 0;
                 gameObject2 = null;
             }
