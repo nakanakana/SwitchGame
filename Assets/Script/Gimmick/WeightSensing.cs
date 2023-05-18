@@ -48,13 +48,28 @@ public class WeightSensing : MonoBehaviour
             audioSource.clip = sound;
             audioSource.Play();
             audioSource.loop = true;
-          //  Alert.instance.OnAleart(sound,loopFlag);
+            //Alert.instance.OnAleart(sound,loopFlag);
             Alert.instance.CallEnemy(enemy, transform);
             //foundFlag = true;            
-            
+
             // Alert.instance.OnAleart();
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        audioSource.clip = sound;
+    //        audioSource.Play();
+    //        audioSource.loop = true;
+    //        //  Alert.instance.OnAleart(sound,loopFlag);
+    //        Alert.instance.CallEnemy(enemy, transform);
+
+    //    }
+
+
+    //}
 
 
     private void OnTriggerExit(Collider other)
