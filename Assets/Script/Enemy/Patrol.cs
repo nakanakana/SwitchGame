@@ -63,7 +63,7 @@ public class Patrol : MonoBehaviour
         player = GameObject.FindWithTag("Player");
 
         _fanGizmo = new FanGizmos.FanGizmo();
-        _gizmo = _fanGizmo.CreateGizmo(this.gameObject, Vector3.zero, Vector3.zero, mat);
+        _gizmo = _fanGizmo.CreateGizmo(this.gameObject, Vector3.zero, agent.transform.eulerAngles, mat);
     }
     
 
