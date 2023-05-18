@@ -6,18 +6,30 @@ public class SceneChange : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField]
+    public int Count;
+
+    float Dtimer = 3.0f;
 
     [SerializeField] private SceneReference sceneToLoad;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if (Count <= 0)
+        {
+            Dtimer -= Time.deltaTime;
 
-        SceneManager.LoadScene(sceneToLoad);
+            if (Dtimer <= 0)
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
+
+    public void SubEnemyCount()
+    {
+
+        Count--;
+        Debug.Log(Count);
+    }
+
 }
