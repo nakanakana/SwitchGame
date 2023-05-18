@@ -8,8 +8,7 @@ public class WeightSensing : MonoBehaviour
     //[Header("個別に音を指定したいならいれて")]
     [Header("音を指定するならここに音を入れて")]
     public  AudioClip sound;
-
-    
+  
     private bool loopFlag = true;
 
     private MeshRenderer mesh;
@@ -20,8 +19,6 @@ public class WeightSensing : MonoBehaviour
     [Header("来てほしい敵をセット")]
     public GameObject[] enemy;
   
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +77,7 @@ public class WeightSensing : MonoBehaviour
             audioSource.Stop();
             //countTime = 0.0f;
             foundFlag = false;
-            //Alert.instance.ReleaseEnemy();
+            Alert.instance.ReleaseEnemy();
             //Alert.instance.ReleaseAleart();
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FlushController : MonoBehaviour
 {
-     Image img;
+    Image img;
     public static FlushController instance;
 
     //private static bool flushFlag = false;
