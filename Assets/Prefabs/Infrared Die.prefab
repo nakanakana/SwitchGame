@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1267882578109760930}
   - component: {fileID: 1267882578109760932}
   - component: {fileID: 1267882578109760933}
+  - component: {fileID: 4995623647857664367}
   m_Layer: 2
   m_Name: Infrared Die
   m_TagString: Untagged
@@ -337,8 +338,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb84bc61dac6434e8e316fc8e86b5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: b22ba733e6a502641b4b370ee9088ebe, type: 3}
   maxDistance: 10
+  player: {fileID: 0}
+--- !u!114 &4995623647857664367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267882578109760935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a899b3d1126c4bd4a93872dad0816686, type: 2}
 --- !u!1 &1267882578146535946
 GameObject:
   m_ObjectHideFlags: 0
