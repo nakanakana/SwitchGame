@@ -3,15 +3,15 @@ using System.Collections;
 using System;
 using UnityEngine;
 
-public class ChangeFade : MonoBehaviour
+public class ClearChangeFade : MonoBehaviour
 {
     [SerializeField]
-    private Fade m_fade = null;
+    private ClearFadeInpanel m_fade = null;
 
     //フェードアウト継続時間
     [SerializeField]
     private float fadeKeepTime = 6.0f;
-    
+
     private void Start()
     {
         Action on_completed = () =>
@@ -22,7 +22,7 @@ public class ChangeFade : MonoBehaviour
         };
 
         //m_fade.FadeIn(2.0f, on_completed);
-        m_fade.FadeOut(2.0f, on_completed);     
+        //m_fade.FadeOut(2.0f, on_completed);
     }
 
     private IEnumerator Wait3SecondsAndFadeOut()
