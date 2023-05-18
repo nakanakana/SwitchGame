@@ -48,10 +48,10 @@ public class ChangeAlpha : MonoBehaviour
             timer += Time.deltaTime;
             // 経過時間をfadeTimeで割った値をalphaに入れる
             // ※alpha値は1(不透明)が最大。
-            this.gameObject.GetComponent<CanvasGroup>().alpha = timer / fadeTime;
+            this.gameObject.GetComponent<CanvasGroup>().alpha += timer / fadeTime;
 
             //alpha値が１timerが8秒を超えたら
-            if(this.gameObject.GetComponent<CanvasGroup>().alpha == 1 && timer > 8)
+            if (this.gameObject.GetComponent<CanvasGroup>().alpha == 1 && timer > 8)
             {
                 //フェードイン有効化
                 flagFadeIn = true;
@@ -64,9 +64,9 @@ public class ChangeAlpha : MonoBehaviour
             //timer -= Time.deltaTime;
             
             //alpha値減少
-            this.gameObject.GetComponent<CanvasGroup>().alpha -= 0.002f;
+            this.gameObject.GetComponent<CanvasGroup>().alpha -= 0.02f;
 
-            if (this.gameObject.GetComponent<CanvasGroup>().alpha == 0)
+            if (this.gameObject.GetComponent<CanvasGroup>().alpha == 0.0f)
             {
                 //フェードイン無効化
                 flagFadeIn = false;
