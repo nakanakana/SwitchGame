@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f26f7ff612404db5413b2e494bce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleObject: {fileID: 3846641421835638271, guid: 46e6ade6d7f916640b30bf9f58fecf71, type: 3}
 --- !u!114 &2602671183851544070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156cccf8f2f73d64bb14db2ab5ab9471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
   camera: {fileID: 0}
+  moveSpeed: 2
   hitEnemy: 0
+  isAttack: 1
