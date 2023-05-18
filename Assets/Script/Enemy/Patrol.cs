@@ -75,20 +75,36 @@ public class Patrol : MonoBehaviour
             //animator.SetFloat("speed", 0);
             return;
         }
-        //animator.SetFloat("speed", 2);
-        // エージェントが現在設定された目標地点に行くように設定します
-        agent.destination = points[destPoint].position;
 
-        // 配列内の次の位置を目標地点に設定し、
-        // 必要ならば出発地点にもどります
-        destPoint = (destPoint + 1) % points.Length;
+        if (!MoveControl.instance.hitEnemy)
+        {
+            //animator.SetFloat("speed", 2);
+            // エージェントが現在設定された目標地点に行くように設定します
+            agent.destination = points[destPoint].position;
 
-        agent.speed = 3.0f;
+            // 配列内の次の位置を目標地点に設定し、
+            // 必要ならば出発地点にもどります
+            destPoint = (destPoint + 1) % points.Length;
+
+            agent.speed = 3.0f;
+        }
     }
 
 
     void Update()
     {
+        UpdateAnimator();
+        _fanGizmo.RefreshGizmo(ref _gizmo, this.gameObject, searchAngle * 2, trackingRange);
+
+        if (MoveControl.instance.hitEnemy)
+        {
+            GotoNextPoint();
+            tracking=false;
+            animator.SetBool("Attack", false);
+            agent.speed = 0;
+            return;
+        }
+
         //Playerとこのオブジェクトの距離を測る
         playerPos = player.transform.position;
         distance = Vector3.Distance(this.transform.position, playerPos);
@@ -97,7 +113,7 @@ public class Patrol : MonoBehaviour
         //　敵の前方からの主人公の方向
         var angle = Vector3.Angle(transform.forward, playerDirection);
 
-        if (tracking && angle <= searchAngle)
+        if (tracking && angle <= searchAngle && !MoveControl.instance.hitEnemy)
         {
             //追跡の時、quitRangeより距離が離れたら中止
             if (distance > quitRange)
@@ -129,8 +145,9 @@ public class Patrol : MonoBehaviour
             animator.SetBool("Attack", false);
         }
 
-        UpdateAnimator();
-        _fanGizmo.RefreshGizmo(ref _gizmo, this.gameObject, searchAngle*2, trackingRange);
+      
+
+       
     }
     public void AlertCome(Transform alertpos)
     {
@@ -170,14 +187,17 @@ public class Patrol : MonoBehaviour
 
     void EnemyShot()
     {
-        time -= Time.deltaTime;
-        if (time <= 0)
+        if (!MoveControl.instance.hitEnemy)
         {
-            BallShot();
-            time = 1.0f;
-        
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                BallShot();
+                time = 1.0f;
+
+            }
+            animator.SetBool("Attack", true);
         }
-        animator.SetBool("Attack", true);
     }
 
     void BallShot()
