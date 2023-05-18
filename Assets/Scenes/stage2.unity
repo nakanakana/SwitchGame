@@ -6597,7 +6597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0a761034e91dd41be00e4107189a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1160098284}
+  player: {fileID: 1188957486}
   sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 1629840781}
@@ -9067,11 +9067,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 390f0bc2ef02cf94db97a9548c29b54a, type: 3}
---- !u!1 &1160098284 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6177809463238398579, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
-  m_PrefabInstance: {fileID: 1193737962}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1168308991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12001,7 +11996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0a761034e91dd41be00e4107189a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1160098284}
+  player: {fileID: 1188957486}
   sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 204173847}
