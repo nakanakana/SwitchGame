@@ -8,21 +8,29 @@ public class ChangeFade : MonoBehaviour
     [SerializeField]
     private Fade m_fade = null;
 
+    //フェードアウト継続時間
+    [SerializeField]
+    private float fadeKeepTime = 6.0f;
+    
     private void Start()
     {
         Action on_completed = () =>
         {
+            //引数があるコルーチンを実行
+            //StartCoroutine (コルーチン名, 引数に渡す値);
             StartCoroutine(Wait3SecondsAndFadeOut());
         };
 
         //m_fade.FadeIn(2.0f, on_completed);
-        m_fade.FadeOut(2.0f, on_completed);
+        m_fade.FadeOut(2.0f, on_completed);     
     }
 
     private IEnumerator Wait3SecondsAndFadeOut()
     {
-        yield return new WaitForSeconds(3.0f);
-        //m_fade.FadeOut(2.0f);
+        //コルーチンの途中で一定時間中断
+        yield return new WaitForSeconds(fadeKeepTime);
+
         m_fade.FadeIn(2.0f);
+
     }
 }

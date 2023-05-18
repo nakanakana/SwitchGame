@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour
     private Collider swordCollider;
 
     [SerializeField]
-    private float attackTime;
+    private float attackTime = 0.5f;
 
     private void Start()
     {

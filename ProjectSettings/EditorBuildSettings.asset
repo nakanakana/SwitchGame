@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutolial.unity
     guid: d90e3afa326104748b900de19ef4d1ea
+  - enabled: 1
+    path: Assets/Scenes/stage1.unity
+    guid: bb2d913d59735854aa856351d993647a
   m_configObjects: {}

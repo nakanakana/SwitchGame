@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
 public class MoveControl : MonoBehaviour
 {
     private Animator animator;
@@ -25,20 +24,9 @@ public class MoveControl : MonoBehaviour
     private const float RotateSpeed = 720f;
     private const string key_isWalk = "IsWalk";
 
-
     public bool hitEnemy = false;
-    public bool pDead;
-
+    
     private bool Grounded;//  地面に着地しているか判定する変数
-
-
-    //[SerializeField]
-    //private GameObject parentObj;
-
-    //[SerializeField]
-    //private GameObject parentObj_;
-    // private float Jumppower;//  ジャンプ力
-
 
     public void Awake()
     {
@@ -50,7 +38,6 @@ public class MoveControl : MonoBehaviour
 
     void Start()
     {
-        //Jumppower = 0.0f;
         rb = GetComponent<Rigidbody>();
 
         this.animator = GetComponent<Animator>();
@@ -60,10 +47,7 @@ public class MoveControl : MonoBehaviour
         PlayerCollider = GameObject.Find("Player").GetComponent<CapsuleCollider>();
         PlayerCollider.enabled = true;
         SceneManager.GetActiveScene();
-
-        //Debug.Assert(parentObj != null);
-        //Debug.Assert(parentObj_ != null);
-
+ 
     }
 
     private void FixedUpdate()
@@ -77,13 +61,7 @@ public class MoveControl : MonoBehaviour
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
-        //Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
-        //moveForward = (cameraForward * inputVertical) + (Camera.main.transform.right * inputHorizontal);
         moveForward = new Vector3(inputHorizontal, 0, inputVertical);
-
-        //moveForward = (cameraForward * inputVertical) + (camera.transform.right * inputHorizontal);
-
-        //animator.SetFloat("Speed", Mathf.Abs(moveForward.z));
 
         if (!hitEnemy)
         {
@@ -91,17 +69,6 @@ public class MoveControl : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(moveForward, transform.up);
             }
-
-            //Vector3 direction = InputToDirection();
-            //float magnitude = direction.magnitude;
-            //if (Mathf.Approximately(magnitude, 0f) == false)
-            //{
-            //    UpdateRotation(direction);
-            //}
-            //if (rb.velocity.y > 0.3f) 
-            //{ 
-            //    rb.velocity = new Vector3(rb.velocity.x, 0.3f, rb.velocity.z); 
-            //}
 
             if (rb.velocity.x > velocityMax)
             {
@@ -113,7 +80,6 @@ public class MoveControl : MonoBehaviour
                 rb.velocity = new Vector3(-0.3f, rb.velocity.y, rb.velocity.z);
             }
 
-
             if (rb.velocity.z > velocityMax)
             {
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0.3f);
@@ -123,9 +89,7 @@ public class MoveControl : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
             }
 
-
         }
-
 
         //Animation
         if (Input.GetMouseButtonDown(0))
@@ -162,7 +126,6 @@ public class MoveControl : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-       
 }
 
   
@@ -177,7 +140,6 @@ public class MoveControl : MonoBehaviour
             Grounded = true;
         }
 
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -187,11 +149,8 @@ public class MoveControl : MonoBehaviour
             hitEnemy = true;
             animator.SetTrigger("IsDied");
 
-            //pDead = true;
             gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
-
         }
-
 
 }
     public bool HitEnemy
