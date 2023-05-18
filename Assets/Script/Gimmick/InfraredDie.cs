@@ -20,40 +20,41 @@ public class InfraredDie : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
-        moveControl = GetComponent<MoveControl>();
+        moveControl = player.GetComponent<MoveControl>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.blue);
+       
 
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         lr.SetPosition(0, ray.origin);
-        Debug.Log(foundFlag);
+        int layerMask = 1 << 2 | 1 << 8 | 1 << 10;
+        layerMask = ~layerMask;
+        //Debug.Log(foundFlag);
         // Debug.Log(countTime);
         //レーザーとプレイヤーの判定
         //当たればレーザーがプレイヤーで遮られ、プレイヤーは死ぬ。慈悲の欠片もない。
         //当たっていなければその光線を遠慮なく照らす
-        if (Physics.Raycast(ray, out hit, maxDistance))
+        if (Physics.Raycast(ray, out hit, maxDistance,layerMask))
         {
             lr.SetPosition(1, hit.point);
-
-
+ 
             if (hit.transform.CompareTag("Player") && !foundFlag)
             {
-                moveControl.HitEnemy = true;     
-               
+                moveControl.OnDead();
+               // lr.SetPosition(1, ray.origin + ray.direction * maxDistance);
             }
         }
         else
-        {
-            lr.SetPosition(1, ray.origin + ray.direction * maxDistance);
+        {          
+           lr.SetPosition(1, ray.origin + ray.direction * maxDistance);
 
         }
+        Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.blue);
 
-       
     }
 }
 

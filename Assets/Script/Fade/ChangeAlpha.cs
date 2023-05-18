@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasGroup))]
 public class ChangeAlpha : MonoBehaviour
 {
+    public static ChangeAlpha instance;
+
     // フェードさせる時間を設定
     [SerializeField]
     private float fadeTime = 1f;
@@ -13,10 +15,10 @@ public class ChangeAlpha : MonoBehaviour
     private float timer;
 
     //フェードインに切り替わったかどうか
-    public bool flagFadeIn;
+    public bool flagFadeIn = false;
 
     //フェードインとフェードアウトを無効化するかどうか
-    private bool ProgramOn;
+    public bool ProgramOn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,10 @@ public class ChangeAlpha : MonoBehaviour
 
         //フェードイン、フェードアウト有効化
         ProgramOn = true;
+
+        //moveControl = GetComponent<MoveControl>();
+        MoveControl.instance.enabled = false;
+        SwitchObj.instance.enabled = false;
     }
 
     // Update is called once per frame
@@ -67,6 +73,9 @@ public class ChangeAlpha : MonoBehaviour
 
                 //フェードイン、フェードアウト無効化
                 ProgramOn = false;
+
+                MoveControl.instance.enabled = true;
+                SwitchObj.instance.enabled = true;
             }
         }
 

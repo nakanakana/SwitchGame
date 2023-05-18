@@ -245,10 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e2ad0c3723b984a95ecf02760373d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetCamera: {fileID: 0}
+  _targetCamera: {fileID: 1786650809}
   _target: {fileID: 374595625}
   _targetUI: {fileID: 467958487}
-  _worldOffset: {x: 6, y: 2, z: 0}
+  _worldOffset: {x: 3, y: 2, z: 0}
   SetTimer: 0
 --- !u!114 &6527231
 MonoBehaviour:

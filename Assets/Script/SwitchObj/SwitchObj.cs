@@ -25,6 +25,14 @@ public class SwitchObj : MonoBehaviour
     //private Vector3 firstObjectPosition;
     //private Vector3 secondObjectPosition;
 
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         //gameObject1 = GameObject.Find("Player");
@@ -67,58 +75,58 @@ public class SwitchObj : MonoBehaviour
             }
         }
 
-        //if (clickcnt == 0)
-        //{
-        //    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        //    {
-        //        if (Input.GetMouseButtonDown(1))
-        //        {
-        //            gameObject1 = hit.collider.gameObject;
-        //            //trans[0] = hit.collider.transform;
-        //            //firstObject.transform.position = hit.collider.transform.position;
-        //            //Debug.Log(hit.collider.transform.position);
-        //            //Debug.Log(gameObject1.name + " obj1");
-        //            clickcnt++;
-        //        }
-        //    }
-        //}
-        //else if (clickcnt == 1)
-        //{
-        //    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        //    {
-        //        if (Input.GetMouseButtonDown(1))
-        //        {
-        //            gameObject2 = hit.collider.gameObject;
+        /*if (clickcnt == 0)
+        {
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    gameObject1 = hit.collider.gameObject;
+                    //trans[0] = hit.collider.transform;
+                    //firstObject.transform.position = hit.collider.transform.position;
+                    //Debug.Log(hit.collider.transform.position);
+                    //Debug.Log(gameObject1.name + " obj1");
+                    clickcnt++;
+                }
+            }
+        }
+        else if (clickcnt == 1)
+        {
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    gameObject2 = hit.collider.gameObject;
+                    //trans[1] = hit.collider.transform;
+                    //secondObject.transform.position = hit.collider.transform.position;
+                    //Debug.Log(hit.collider.transform.position);
+                    // 配列の位置を交換する
+                    //SwapArray();
+                    //Debug.Log(gameObject2.name + " obj2");
+                }
+            }
+            if (gameObject1 != null && gameObject2 != null)
+            {
+                // オブジェクトの位置を交換する
+                if (gameObject1.CompareTag("Cube") && gameObject2.name == ("Player")
+                    || gameObject2.CompareTag("Cube") && gameObject1.name == ("Player"))
+                {
+                    SwapObj(gameObject1, gameObject2);
+                    clickcnt = 0;
+                    //Debug.Log("change");
+                }
+                else
+                {
+                    clickcnt = 0;
+                    gameObject1 = null;
+                    gameObject2 = null;
+                    //Debug.Log("No change& null");
+                }
+            }
+        }
+        Debug.Log(clickcnt);*/
 
-        //            //trans[1] = hit.collider.transform;
-        //            //secondObject.transform.position = hit.collider.transform.position;
-        //            //Debug.Log(hit.collider.transform.position);
 
-        //            // 配列の位置を交換する
-        //            //SwapArray();
-        //            //Debug.Log(gameObject2.name + " obj2");
-        //        }
-        //    }
-        //    if (gameObject1 != null && gameObject2 != null)
-        //    {
-        //        // オブジェクトの位置を交換する
-        //        if (gameObject1.CompareTag("Cube") && gameObject2.name == ("Player")
-        //            || gameObject2.CompareTag("Cube") && gameObject1.name == ("Player"))
-        //        {
-        //            SwapObj(gameObject1, gameObject2);
-        //            clickcnt = 0;
-        //            //Debug.Log("change");
-        //        }
-        //        else
-        //        {
-        //            clickcnt = 0;
-        //            gameObject1 = null;
-        //            gameObject2 = null;
-        //            //Debug.Log("No change& null");
-        //        }
-        //    }
-        //}
-        //Debug.Log(clickcnt);
     }
     //public void OnclickBook(Book.COLOR color,Transform transform)
     //{

@@ -25,7 +25,9 @@ public class MoveControl : MonoBehaviour
     private const string key_isWalk = "IsWalk";
 
     public bool hitEnemy = false;
-    
+
+    public bool isAttack = true;
+
     private bool Grounded;//  地面に着地しているか判定する変数
 
     public void Awake()
@@ -45,7 +47,7 @@ public class MoveControl : MonoBehaviour
         hitEnemy = false;
 
         PlayerCollider = GameObject.Find("Player").GetComponent<CapsuleCollider>();
-        PlayerCollider.enabled = true;
+       // PlayerCollider.enabled = true;
         SceneManager.GetActiveScene();
  
     }
@@ -89,17 +91,8 @@ public class MoveControl : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -0.3f);
             }
 
-        }
 
-        //Animation
-        if (Input.GetMouseButtonDown(0))
-        {
-            animator.SetTrigger("IsAttacked");
 
-        }
-
-        if (!hitEnemy)
-        {
             // ボタンを押下している
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -111,14 +104,44 @@ public class MoveControl : MonoBehaviour
                 // RunからWaitに遷移する
                 this.animator.SetBool(key_isWalk, false);
             }
-        }
 
-        // Player死んだら
-        if (hitEnemy == true)
+            //Animation
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetTrigger("IsAttacked");
+
+            }
+        }
+        else
         {
             //シーンタイマーに足す
             nowSceneTimer += Time.deltaTime;
         }
+
+      
+
+        //if (!hitEnemy)
+        //{
+        //    // ボタンを押下している
+        //    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        //    {
+        //        // WaitからRunに遷移する
+        //        this.animator.SetBool(key_isWalk, true);
+        //    }
+        //    else
+        //    {
+        //        // RunからWaitに遷移する
+        //        this.animator.SetBool(key_isWalk, false);
+        //    }
+        //}
+
+        // Player死んだら
+        //if (hitEnemy == true)
+        //{
+        //    //シーンタイマーに足す
+        //    nowSceneTimer += Time.deltaTime;
+        //}
+
         //シーンタイマーが3秒過ぎたら
         if (nowSceneTimer >= 3.0f)
         {
@@ -142,14 +165,23 @@ public class MoveControl : MonoBehaviour
 
     }
 
+    //殺す処理
+    public void OnDead()
+    {
+        if (!HitEnemy)
+        {
+            HitEnemy = true;
+            animator.SetTrigger("IsDied");
+            gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
+
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet")// もしBulletというタグがついたオブジェクトに触れたら、
         {
-            hitEnemy = true;
-            animator.SetTrigger("IsDied");
-
-            gameObject.layer = LayerMask.NameToLayer("DammyPlayer");
+            OnDead();
         }
 
 }
@@ -168,6 +200,18 @@ public class MoveControl : MonoBehaviour
 
     }
 
+    public bool IsAttack
+    {
+        get
+        {
+            return isAttack;
+        }
+        set
+        {
+            isAttack = value;
+        }
+
+    }
 
 }
 

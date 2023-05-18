@@ -24,16 +24,23 @@ public class AlertDevice : MonoBehaviour
     //鳴らし手との距離保存用
     private float dist = 0.0f;
 
+    //鳴らせる範囲
+    private float range = 1.5f;
+
+    //敵がいたら鳴らせなくなる範囲
+    private float eRange = 1.7f;
+
     //デバイスが使用状況かどうか true : 使用中 false : 未使用
     private bool deviceFlag = false;
 
+    private MoveControl moveControl;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //player = GameObject.Find("Player");
-
+        moveControl = player.GetComponent<MoveControl>();
     }
 
     // Update is called once per frame
@@ -42,31 +49,12 @@ public class AlertDevice : MonoBehaviour
         dist = Vector3.Distance(player.transform.position, this.transform.position);
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit hit;
-        
-        if (dist < 1.5f)
-        {
 
-            if (Input.GetMouseButtonDown(0) && !Alert.instance.GetisAlert())
-            {
-                if (sound != null)
-                {
-                    Alert.instance.OnAleart(sound,loopFlag);
-                }
-                else
-                {
-                    Alert.instance.OnAleart(loopFlag);
-                  
-                }
-                Alert.instance.CallEnemy(enemy, transform);
-                //aleartTime = 0.0f;
-                deviceFlag = true;
-            }
-        }
 
         if (deviceFlag)
         {
             aleartCount += Time.deltaTime;
-            
+
         }
         if (aleartCount >= aleartTime)
         {
@@ -76,7 +64,41 @@ public class AlertDevice : MonoBehaviour
             Alert.instance.ReleaseAleart();
             deviceFlag = false;
         }
-        Debug.Log(aleartCount);
+
+
+
+        if (JudgeDistance())
+        {
+
+            return;
+        }
+
+        if (dist < range)
+        {
+            moveControl.IsAttack = false;
+            if (Input.GetMouseButtonDown(0) && !Alert.instance.GetisAlert())
+            {
+               
+                if (sound != null)
+                {
+                    Alert.instance.OnAleart(sound, loopFlag);
+                }
+                else
+                {
+                    Alert.instance.OnAleart(loopFlag);
+
+                }
+              
+                Alert.instance.CallEnemy(enemy, transform);
+                //aleartTime = 0.0f;
+                deviceFlag = true;
+            }
+        }
+        else
+        {
+            moveControl.IsAttack = true;
+        }
+      
     }
     private void CallEnemy()
     {
@@ -88,4 +110,25 @@ public class AlertDevice : MonoBehaviour
             }
         }
     }
+
+    private bool JudgeDistance()
+    {
+        float eDist;
+        for (int i = 0; i < enemy.Length; ++i)
+        {
+            if (enemy[i] != null)
+            {
+                eDist=Vector3.Distance(enemy[i].transform.position, this.transform.position);
+                if (eDist < 1.7f)
+                {
+                    return true;
+
+                }
+            }
+        }
+
+
+        return false;
+    }
+
 }
