@@ -6404,7 +6404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4589035896565002263, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: m_Name
-      value: 'Player '
+      value: PlayerOBJ
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
@@ -8301,8 +8301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Count: 4
   sceneToLoad:
-    sceneAsset: {fileID: 102900000, guid: 1bb6101a2359ddf4cadfd3dcf060ad76, type: 3}
-    scenePath: Assets/Scenes/TitleScene.unity
+    sceneAsset: {fileID: 102900000, guid: 8bed7a0821958f84889d4af7e3c99d9c, type: 3}
+    scenePath: Assets/Scenes/GameClear.unity
   directionLight: {fileID: 1219563907}
 --- !u!4 &2050390150
 Transform:

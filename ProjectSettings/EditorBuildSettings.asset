@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage7.unity
     guid: 948ed39d30ddea849a8468bb05494af9
+  - enabled: 1
+    path: Assets/Scenes/GameClear.unity
+    guid: 8bed7a0821958f84889d4af7e3c99d9c
   m_configObjects: {}
