@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HitSword : MonoBehaviour
 {
+    public SceneChange sceneChange;
     public GameObject particleObject;
    
     void OnTriggerEnter(Collider other)
@@ -14,8 +15,8 @@ public class HitSword : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Instantiate(particleObject, other.transform.position, Quaternion.identity);
-            Destroy(other.gameObject, 0.4f);      
-
+            Destroy(other.gameObject, 0.4f);
+            sceneChange.SubEnemyCount();
         }
     }
 
