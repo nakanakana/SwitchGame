@@ -16,7 +16,7 @@ public class ClickSceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))    // 左マウスボタンをクリックしたら
+        if (Input.GetKeyDown(KeyCode.Return))    // Enterをクリックしたら
         {
             SceneManager.LoadScene(sceneToLoad);
         }
