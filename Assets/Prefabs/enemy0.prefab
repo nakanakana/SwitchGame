@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 7478173806574092894}
   - component: {fileID: 7478173806574092893}
   - component: {fileID: 6248667200996360044}
-  - component: {fileID: 1030047766463202745}
   m_Layer: 0
   m_Name: enemy0
   m_TagString: Enemy
@@ -142,6 +141,7 @@ MonoBehaviour:
   searchAngle: 100
   ball: {fileID: 6401256524832047574, guid: 0bc408923dead0c41b22c93fd355630f, type: 3}
   ShotPosY: 0
+  mat: {fileID: 2100000, guid: c3fce167bde245f4c8ce0ef3d77103bf, type: 2}
 --- !u!195 &7478173806574092893
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -178,18 +178,3 @@ CapsuleCollider:
   m_Height: 0.327046
   m_Direction: 1
   m_Center: {x: 0, y: 0.16773869, z: 0.002052486}
---- !u!114 &1030047766463202745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7605657868555916500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e02e46ee0472f3418d66be8b4053f92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sight_range: 3
-  _sight_angle: 200
-  mat: {fileID: 2100000, guid: c3fce167bde245f4c8ce0ef3d77103bf, type: 2}

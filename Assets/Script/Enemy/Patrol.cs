@@ -30,6 +30,11 @@ public class Patrol : MonoBehaviour
 
     [SerializeField] float ShotPosY = 0;
 
+    [Header("ギズモに割り当てるマテリアル")]
+    [SerializeField] private Material mat;
+    private GameObject _gizmo;
+    private FanGizmos.FanGizmo _fanGizmo;
+
     // アニメーターのパラメーターのIDを取得（高速化のため）
     readonly int SpeedHash = Animator.StringToHash("Speed");
     //readonly int AttackHash = Animator.StringToHash("Attack");
@@ -56,6 +61,9 @@ public class Patrol : MonoBehaviour
         //追跡したいオブジェクトの名前を入れる
         //player = GameObject.Find("Player");
         player = GameObject.FindWithTag("Player");
+
+        _fanGizmo = new FanGizmos.FanGizmo();
+        _gizmo = _fanGizmo.CreateGizmo(this.gameObject, Vector3.zero, Vector3.zero, mat);
     }
     
 
@@ -122,6 +130,7 @@ public class Patrol : MonoBehaviour
         }
 
         UpdateAnimator();
+        _fanGizmo.RefreshGizmo(ref _gizmo, this.gameObject, searchAngle*2, trackingRange);
     }
     public void AlertCome(Transform alertpos)
     {
