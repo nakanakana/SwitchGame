@@ -83,7 +83,7 @@ public class Patrol : MonoBehaviour
         // 必要ならば出発地点にもどります
         destPoint = (destPoint + 1) % points.Length;
 
-        agent.speed = 2.5f;
+        agent.speed = 3.0f;
     }
 
 
@@ -108,7 +108,7 @@ public class Patrol : MonoBehaviour
             //Playerを目標とする
             agent.destination = playerPos;
             EnemyShot();
-            agent.speed = 4.0f;
+            agent.speed = 5.0f;
             animator.SetBool("Attack", true);
         }
         else
@@ -135,7 +135,7 @@ public class Patrol : MonoBehaviour
     public void AlertCome(Transform alertpos)
     {
         agent.destination = alertpos.position;
-        agent.speed = 3.0f;
+        agent.speed = 4.0f;
         if (distance < trackingRange)
             tracking = true;
         if (agent.destination == alertpos.position && tracking == false) { GotoNextPoint(); }
