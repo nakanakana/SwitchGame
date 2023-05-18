@@ -543,6 +543,11 @@ PrefabInstance:
       objectReference: {fileID: 1712463952}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
+--- !u!1 &44987767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8127627817662389001, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
+  m_PrefabInstance: {fileID: 44987766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &57729818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6902928835883833523, guid: 9aa569b6b7e06764d896d93324b590ba, type: 3}
@@ -2074,7 +2079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   enemy:
-  - {fileID: 0}
+  - {fileID: 1664295990}
 --- !u!4 &369205362
 Transform:
   m_ObjectHideFlags: 0
@@ -3626,7 +3631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   enemy:
-  - {fileID: 0}
+  - {fileID: 44987767}
 --- !u!114 &534313235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4733,7 +4738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   enemy:
-  - {fileID: 0}
+  - {fileID: 1664295990}
 --- !u!114 &671193345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5014,7 +5019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   enemy:
-  - {fileID: 0}
+  - {fileID: 44987767}
 --- !u!114 &709868319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5562,7 +5567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   enemy:
-  - {fileID: 0}
+  - {fileID: 1664295990}
 --- !u!114 &758904128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6172,7 +6177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   enemy:
-  - {fileID: 0}
+  - {fileID: 44987767}
 --- !u!114 &841508582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10802,6 +10807,11 @@ PrefabInstance:
       objectReference: {fileID: 580011837}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
+--- !u!1 &1664295990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8127627817662389001, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
+  m_PrefabInstance: {fileID: 1664295989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1669820086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4016294636187037851, guid: 9ce9f7498377bba4da10909846ee6564, type: 3}
