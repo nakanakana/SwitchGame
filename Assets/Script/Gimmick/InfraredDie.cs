@@ -53,7 +53,7 @@ public class InfraredDie : MonoBehaviour
            lr.SetPosition(1, ray.origin + ray.direction * maxDistance);
 
         }
-        Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.blue);
+       // Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.blue);
 
     }
 }
