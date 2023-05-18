@@ -27,6 +27,14 @@ public class Patrol : MonoBehaviour
     [SerializeField] GameObject ball;
     private float ballSpeed = 10.0f;
     private float time = 1.0f;
+
+    [SerializeField] float ShotPosY = 0;
+
+    // アニメーターのパラメーターのIDを取得（高速化のため）
+    readonly int SpeedHash = Animator.StringToHash("Speed");
+    readonly int AttackHash = Animator.StringToHash("Attack");
+    readonly int DeadHash = Animator.StringToHash("Dead");
+
     public void Awake()
     {
         if(instance == null)
@@ -55,14 +63,19 @@ public class Patrol : MonoBehaviour
     {
         // 地点がなにも設定されていないときに返します
         if (points.Length == 0)
+        {
+            //animator.SetFloat("speed", 0);
             return;
-
+        }
+        //animator.SetFloat("speed", 2);
         // エージェントが現在設定された目標地点に行くように設定します
         agent.destination = points[destPoint].position;
 
         // 配列内の次の位置を目標地点に設定し、
         // 必要ならば出発地点にもどります
         destPoint = (destPoint + 1) % points.Length;
+
+        agent.speed = 2.5f;
     }
 
 
@@ -87,6 +100,8 @@ public class Patrol : MonoBehaviour
             //Playerを目標とする
             agent.destination = playerPos;
             EnemyShot();
+            agent.speed = 4.0f;
+            animator.SetBool("Attack", true);
         }
         else
         {
@@ -103,16 +118,15 @@ public class Patrol : MonoBehaviour
             {
                 GotoNextPoint();
             }
+            animator.SetBool("Attack", false);
         }
-        //if (tracking) { 
-            
-        //    Debug.Log("プレイヤーがおる");
-        //}
-        
+
+        UpdateAnimator();
     }
     public void AlertCome(Transform alertpos)
     {
         agent.destination = alertpos.position;
+        agent.speed = 3.0f;
         if (distance < trackingRange)
             tracking = true;
         if (agent.destination == alertpos.position && tracking == false) { GotoNextPoint(); }
@@ -148,19 +162,24 @@ public class Patrol : MonoBehaviour
         {
             BallShot();
             time = 1.0f;
+        
         }
+        animator.SetBool("Attack", true);
     }
 
     void BallShot()
     {
-        GameObject shotObj = Instantiate(ball, transform.position, Quaternion.identity);
+        Vector3 traformPos = transform.position;
+        traformPos.y += ShotPosY;
+        GameObject shotObj = Instantiate(ball, traformPos, Quaternion.identity);
         shotObj.GetComponent<Rigidbody>().velocity = transform.forward * ballSpeed;
         Destroy(shotObj, 2.0f);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        //if(other.gameObject.tag == "Bullet")
-        //Debug.Log(other.gameObject.tag);
-    }
 
+    // アニメーターのアップデート処理
+    void UpdateAnimator()
+    {
+        animator.SetFloat(SpeedHash, agent.desiredVelocity.magnitude);
+    }
+    
 }

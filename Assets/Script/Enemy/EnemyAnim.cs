@@ -17,11 +17,9 @@ public class EnemyAnim : MonoBehaviour
         if (!Patrol.instance.tracking) 
         {
             enemyanim.SetBool("Attack", false);
-            enemyanim.SetBool("Walk", true); 
-                    
+                   
         }
         if (Patrol.instance.tracking) enemyanim.SetBool("Attack", true);
-
         
     }
 
