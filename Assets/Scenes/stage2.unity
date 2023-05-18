@@ -12062,7 +12062,7 @@ PrefabInstance:
     - target: {fileID: 2602671183851544069, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: sceneChange
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1878668932}
     - target: {fileID: 2602671183851544069, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: particleObject
       value: 
@@ -14484,7 +14484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0a761034e91dd41be00e4107189a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1160098284}
+  player: {fileID: 1188957486}
   sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 1456210219}
