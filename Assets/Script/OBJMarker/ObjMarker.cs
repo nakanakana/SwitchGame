@@ -16,7 +16,14 @@ public class ObjMarker : MonoBehaviour
     // オブジェクト位置のオフセット
     [SerializeField] private Vector3 _worldOffset;
 
+    ObjMarker objMarker;
+
     private RectTransform _parentUI;
+
+    private float StartTimer = 0.0f;
+
+    [SerializeField]
+    private float SetTimer;
 
     // 初期化メソッド（Prefabから生成する時などに使う）
     public void Initialize(Transform target, Camera targetCamera = null)
@@ -37,10 +44,16 @@ public class ObjMarker : MonoBehaviour
         _parentUI = _targetUI.parent.GetComponent<RectTransform>();
     }
 
+
     // UIの位置を毎フレーム更新
     private void Update()
     {
-        OnUpdatePosition();
+        StartTimer += Time.deltaTime;
+
+        if(StartTimer >= SetTimer)
+        {
+            OnUpdatePosition();
+        }
     }
 
     // UIの位置を更新する
