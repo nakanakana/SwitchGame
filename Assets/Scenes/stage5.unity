@@ -168,6 +168,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &1895900
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2276,6 +2277,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &196941317
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2763,6 +2765,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &232948686
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3955,7 +3958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e1d92fd1ca86a4ab95b8872579d9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleObject: {fileID: 0}
+  particleObject: {fileID: 6891548675796570133, guid: 13f9a73b3b0dc13418ee4b84fa662a15, type: 3}
 --- !u!4 &387115451
 Transform:
   m_ObjectHideFlags: 0
@@ -9077,6 +9080,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &890872804
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12832,6 +12836,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &1262585117
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14087,6 +14092,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &1358960696
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16334,6 +16340,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &1607921086
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18395,6 +18402,7 @@ MonoBehaviour:
   tracking: 0
   searchAngle: 100
   ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!114 &1787953843
 MonoBehaviour:
   m_ObjectHideFlags: 0
