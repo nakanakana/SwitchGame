@@ -1032,6 +1032,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 376997969}
+  - component: {fileID: 376997970}
+  - component: {fileID: 376997968}
   m_Layer: 0
   m_Name: FadeControl
   m_TagString: Untagged
@@ -1039,6 +1041,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &376997968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376997967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2076574ffdee8f34b8a38276dbe9a2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &376997969
 Transform:
   m_ObjectHideFlags: 0
@@ -1053,6 +1067,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376997970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376997967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a39cdd3af5646947a68c1e50f008580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fade: {fileID: 176362574}
+  fadeKeepTime: 6
 --- !u!1 &406493392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,8 +3297,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1699707302}
-  - component: {fileID: 1699707304}
-  - component: {fileID: 1699707303}
   m_Layer: 0
   m_Name: Story
   m_TagString: Untagged
@@ -3293,32 +3319,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1699707303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699707301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2076574ffdee8f34b8a38276dbe9a2be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1699707304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699707301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a39cdd3af5646947a68c1e50f008580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_fade: {fileID: 176362574}
-  fadeKeepTime: 6
 --- !u!1 &1805235480
 GameObject:
   m_ObjectHideFlags: 0
