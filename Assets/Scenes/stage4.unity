@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 1664295990}
 --- !u!4 &369205362
@@ -2139,7 +2139,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3620,7 +3620,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3727,7 +3727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 44987767}
 --- !u!114 &534313235
@@ -4727,7 +4727,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4834,7 +4834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 1664295990}
 --- !u!114 &671193345
@@ -5008,7 +5008,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 44987767}
 --- !u!114 &709868319
@@ -5556,7 +5556,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5663,7 +5663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 1664295990}
 --- !u!114 &758904128
@@ -6167,7 +6167,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6274,7 +6274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 44987767}
 --- !u!114 &841508582
@@ -6619,7 +6619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: b22ba733e6a502641b4b370ee9088ebe, type: 3}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 530389598}
   - {fileID: 623571319}
@@ -6637,7 +6637,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
