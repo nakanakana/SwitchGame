@@ -35,6 +35,7 @@ public class ChangeAlpha : MonoBehaviour
 
         //moveControl = GetComponent<MoveControl>();
         MoveControl.instance.enabled = false;
+        SwitchObj.instance.enabled = false;
     }
 
     // Update is called once per frame
@@ -74,6 +75,7 @@ public class ChangeAlpha : MonoBehaviour
                 ProgramOn = false;
 
                 MoveControl.instance.enabled = true;
+                SwitchObj.instance.enabled = true;
             }
         }
 
