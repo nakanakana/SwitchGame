@@ -19,7 +19,7 @@ public class AlertDevice : MonoBehaviour
     public float aleartTime;
 
     //[Header("ループさせるか否か(デフォルトはループしない)")]
-    private bool loopFlag;
+    private bool loopFlag=true;
 
     //鳴らし手との距離保存用
     private float dist = 0.0f;
@@ -62,6 +62,7 @@ public class AlertDevice : MonoBehaviour
             aleartCount = 0.0f;
             //FlushController.instance.flushClear();
             Alert.instance.ReleaseAleart();
+            Alert.instance.ReleaseEnemy();
             deviceFlag = false;
         }
 

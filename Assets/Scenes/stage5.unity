@@ -4980,7 +4980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5a456e71816814f94950301774f5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: b22ba733e6a502641b4b370ee9088ebe, type: 3}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
 --- !u!114 &418585020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4994,7 +4994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 840762890}
-  sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5a80e454fe1dccf43bd045a289b0747a, type: 3}
   enemy:
   - {fileID: 2076132382}
   - {fileID: 1148729139}
@@ -5013,7 +5013,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -13142,10 +13142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe025df391bfad4898d5256b17f2dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Count: 8
+  Count: 12
   sceneToLoad:
     sceneAsset: {fileID: 102900000, guid: 101d0fa5d6e728847849429ad5319b9d, type: 3}
     scenePath: Assets/Scenes/stage6.unity
+  directionLight: {fileID: 1865931842}
 --- !u!4 &1201040056
 Transform:
   m_ObjectHideFlags: 0
@@ -15589,6 +15590,10 @@ PrefabInstance:
       propertyPath: particleObject
       value: 
       objectReference: {fileID: 3846641421835638271, guid: 46e6ade6d7f916640b30bf9f58fecf71, type: 3}
+    - target: {fileID: 2602671183851544070, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
+      propertyPath: attackTime
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4589035896565002255, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19322,7 +19327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7251291202714266979, guid: 958762777d7ea6941803583208cdb2a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.19
+      value: 30.78
       objectReference: {fileID: 0}
     - target: {fileID: 7251291202714266979, guid: 958762777d7ea6941803583208cdb2a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19330,7 +19335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7251291202714266979, guid: 958762777d7ea6941803583208cdb2a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.207
+      value: -12.19
       objectReference: {fileID: 0}
     - target: {fileID: 7251291202714266979, guid: 958762777d7ea6941803583208cdb2a3, type: 3}
       propertyPath: m_LocalRotation.w

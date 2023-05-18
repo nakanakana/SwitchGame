@@ -12,6 +12,12 @@ public class SceneChange : MonoBehaviour
     float Dtimer = 3.0f;
 
     [SerializeField] private SceneReference sceneToLoad;
+    [SerializeField] private Light directionLight;
+
+    private void Start()
+    {
+        directionLight.intensity = 1;
+    }
 
     // Update is called once per frame
     void Update()

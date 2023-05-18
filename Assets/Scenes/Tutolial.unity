@@ -652,6 +652,7 @@ MonoBehaviour:
   sceneToLoad:
     sceneAsset: {fileID: 102900000, guid: bb2d913d59735854aa856351d993647a, type: 3}
     scenePath: Assets/Scenes/stage1.unity
+  directionLight: {fileID: 333676813}
 --- !u!4 &108218724
 Transform:
   m_ObjectHideFlags: 0
