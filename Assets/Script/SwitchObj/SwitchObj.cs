@@ -19,6 +19,7 @@ public class SwitchObj : MonoBehaviour
     GameObject gameObject1 = null;
     GameObject gameObject2 = null;
     public GameObject particleObject;
+    public AudioSource audioSource;
     //public GameObject firstObject;
     //public GameObject secondObject;
 
@@ -65,6 +66,7 @@ public class SwitchObj : MonoBehaviour
                 SwapObj(gameObject1, gameObject2);
                 GameObject effect = Instantiate(particleObject, gameObject2.transform.position, Quaternion.identity);
                 effect.transform.forward = Vector2.up;
+                audioSource.Play();
                 clickcnt = 0;
                 gameObject2 = null;
             }
