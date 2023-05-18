@@ -32,7 +32,7 @@ public class Patrol : MonoBehaviour
 
     // アニメーターのパラメーターのIDを取得（高速化のため）
     readonly int SpeedHash = Animator.StringToHash("Speed");
-    readonly int AttackHash = Animator.StringToHash("Attack");
+    //readonly int AttackHash = Animator.StringToHash("Attack");
     readonly int DeadHash = Animator.StringToHash("Dead");
 
     public void Awake()
