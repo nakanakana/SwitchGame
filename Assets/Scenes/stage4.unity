@@ -4413,6 +4413,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 390f0bc2ef02cf94db97a9548c29b54a, type: 3}
+--- !u!1 &786062650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6091102688091062793, guid: 9aa569b6b7e06764d896d93324b590ba, type: 3}
+  m_PrefabInstance: {fileID: 1846661778121833306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &786062653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786062650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5f11648cb085d4cb54f580881b0249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: b22ba733e6a502641b4b370ee9088ebe, type: 3}
+  enemy:
+  - {fileID: 437905623}
 --- !u!4 &795724101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6902928835883833523, guid: 9aa569b6b7e06764d896d93324b590ba, type: 3}
@@ -4861,7 +4881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: b22ba733e6a502641b4b370ee9088ebe, type: 3}
-  enemy: []
+  enemy:
+  - {fileID: 437905623}
 --- !u!82 &860851947
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9082,7 +9103,7 @@ MonoBehaviour:
   _targetCamera: {fileID: 0}
   _target: {fileID: 860851945}
   _targetUI: {fileID: 1618903254}
-  _worldOffset: {x: 3, y: 8, z: 0}
+  _worldOffset: {x: 3, y: -7, z: 0}
   SetTimer: 0
 --- !u!114 &1524936243
 MonoBehaviour:
@@ -9489,7 +9510,7 @@ RectTransform:
   m_GameObject: {fileID: 1618903253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1524936241}
   m_RootOrder: 0
