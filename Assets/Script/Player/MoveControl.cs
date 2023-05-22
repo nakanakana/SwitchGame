@@ -113,7 +113,7 @@ public class MoveControl : MonoBehaviour
             }
 
             //Animation
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 5"))
             {
                 animator.SetTrigger("IsAttacked");
 
