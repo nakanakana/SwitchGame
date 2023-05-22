@@ -65,7 +65,9 @@ public class SwitchObj : MonoBehaviour
             {
                 SwapObj(gameObject1, gameObject2);
                 GameObject effect = Instantiate(particleObject, gameObject2.transform.position, Quaternion.identity);
+                GameObject effect1 = Instantiate(particleObject, gameObject1.transform.position, Quaternion.identity);
                 effect.transform.forward = Vector2.up;
+                effect1.transform.forward = Vector2.up;
                 audioSource.Play();
                 clickcnt = 0;
                 gameObject2 = null;

@@ -59,9 +59,8 @@ public class MoveControl : MonoBehaviour
     }
     void Update()
     {
-
         inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
+        inputVertical = Input.GetAxisRaw("Vertical"); 
 
         moveForward = new Vector3(inputHorizontal, 0, inputVertical);
 
@@ -94,7 +93,15 @@ public class MoveControl : MonoBehaviour
 
 
             // ボタンを押下している
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (
+                //キー入力
+                Input.GetKey(KeyCode.W) || 
+                Input.GetKey(KeyCode.A) ||
+                Input.GetKey(KeyCode.S) || 
+                Input.GetKey(KeyCode.D) ||
+                //ゲームパッド
+                inputHorizontal != 0 ||
+                inputVertical != 0)
             {
                 // WaitからRunに遷移する
                 this.animator.SetBool(key_isWalk, true);
@@ -106,7 +113,7 @@ public class MoveControl : MonoBehaviour
             }
 
             //Animation
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 5"))
             {
                 animator.SetTrigger("IsAttacked");
 

@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour
         if(MoveControl.instance.hitEnemy == false)
         {
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 5"))
             {
                 //animator.SetTrigger("IsAttacked");
 
