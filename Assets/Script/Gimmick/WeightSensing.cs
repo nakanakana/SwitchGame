@@ -6,7 +6,7 @@ public class WeightSensing : MonoBehaviour
 {
     private AudioSource audioSource;
     //[Header("ŒÂ•Ê‚É‰¹‚ðŽw’è‚µ‚½‚¢‚È‚ç‚¢‚ê‚Ä")]
-    [Header("‰¹‚ðŽw’è‚·‚é‚È‚ç‚±‚±‚É‰¹‚ð“ü‚ê‚Ä")]
+    [Header("‚±‚±‚É‰¹‚ð“ü‚ê‚Ä")]
     public  AudioClip sound;
   
     private bool loopFlag = true;
