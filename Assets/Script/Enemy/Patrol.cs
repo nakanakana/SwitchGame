@@ -115,8 +115,8 @@ public class Patrol : MonoBehaviour
     {
         UpdateAnimator();
         //_fanGizmo1.RefreshGizmo(ref _gizmo1, this.gameObject, searchAngle * 2, trackingRange);
-        _fanGizmo2.RefreshGizmo(ref _gizmo1, this.gameObject, _sight_angle, _sight_range);
-        _fanGizmo2.RefreshGizmo(ref _gizmo2, this.gameObject, quitAngle, quitRange);
+        _fanGizmo2.RefreshGizmo(ref _gizmo1, gameObject, _sight_angle, _sight_range);
+        _fanGizmo2.RefreshGizmo(ref _gizmo2, gameObject, quitAngle, quitRange);
 
         if (MoveControl.instance.hitEnemy)
         {
@@ -139,24 +139,24 @@ public class Patrol : MonoBehaviour
         Vector3 temp = playerPos - transform.position;
         direction = temp.normalized;
         ray = new Ray(transform.position, direction);  // Rayを飛ばす
-        Debug.DrawRay(ray.origin, ray.direction * _sight_range, Color.black);  // Rayをシーン上に描画
+        //Debug.DrawRay(ray.origin, ray.direction * _sight_range, Color.black);  // Rayをシーン上に描画
 
         if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
         {
-            if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
+            if (/*hit.collider.CompareTag("Player") && */!MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
             {
                 tracking = true;
-                
+
             }
+            else tracking = false;
         }
 
-        if (/*tracking && angle <= searchAngle && distance < trackingRange && !MoveControl.instance.hitEnemy ||*/
-            tracking /*&& angle <= _sight_angle && distance<_sight_range */)
+        if (tracking)
         {
             
 
             //追跡の時、quitRangeより距離が離れたら中止
-            if (distance > quitRange || angle > quitAngle/*angle > _sight_angle && distance > _sight_range*/)
+            if (distance > quitRange || angle > quitAngle || MoveControl.instance.hitEnemy)
             {
                 tracking = false;
             }
@@ -171,17 +171,14 @@ public class Patrol : MonoBehaviour
         else
         {
             //PlayerがtrackingRangeより近づいたら追跡開始
-            if (/*distance < trackingRange && angle <= searchAngle ||*/
-                distance < _sight_range && angle <= _sight_angle)
+            if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
             {
-                if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
+                if (/*hit.collider.CompareTag("Player") && */!MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
                 {
-                    if (hit.collider.CompareTag("Player"))
-                    {
-                        //EnemyShot();
-                        tracking = true;
-                    }
+                    tracking = true;
+
                 }
+                else tracking = false;
             }
 
             // エージェントが現目標地点に近づいてきたら、
@@ -201,14 +198,14 @@ public class Patrol : MonoBehaviour
     {
         agent.destination = alertpos.position;
         agent.speed = 4.0f;
-        if (/*distance < trackingRange ||*/ distance < _sight_range)
+        if (distance < _sight_range)
             tracking = true;
         if (agent.destination == alertpos.position && tracking == false) { GotoNextPoint(); }
     }
 
     public void Return()
     {
-        if (/*distance < trackingRange || */distance < _sight_range)
+        if (distance < _sight_range)
             tracking = true;
         if (!tracking) GotoNextPoint();
     }
