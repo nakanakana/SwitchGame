@@ -64,6 +64,12 @@ public class SwitchObj : MonoBehaviour
 
     private void Update()
     {
+        if (MoveControl.instance.hitEnemy)
+        {
+            return;
+        }
+
+
         var controllerNames = Input.GetJoystickNames();
 
         Vector3 _imgRect = TestUIRay.instance._imgRect.position;
