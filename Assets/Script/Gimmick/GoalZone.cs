@@ -7,7 +7,9 @@ public class GoalZone : MonoBehaviour
     public static GoalZone instance;
     private MeshRenderer meshRenderer=null;
     private BoxCollider collider=null;
-
+    public GameObject particleObject;
+    [SerializeField]
+    private ParticleSystem particle;
     private void Awake()
     {
         if (instance == null)
@@ -32,12 +34,15 @@ public class GoalZone : MonoBehaviour
     {
         if (SceneChange.instance.Count <= 0)
         {
-            if (!meshRenderer.enabled)
-            {
-                meshRenderer.enabled = true;
-            }
+            //if (!meshRenderer.enabled)
+            //{
+            //    meshRenderer.enabled = true;
+            //}
             if (!collider.enabled)
             {
+                ParticleSystem newParticle = Instantiate(particle);
+                newParticle.transform.position = this.transform.position;
+                newParticle.Play();
                 collider.enabled = true;
             }
             
