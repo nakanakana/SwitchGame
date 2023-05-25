@@ -12973,8 +12973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   sceneToLoad:
-    sceneAsset: {fileID: 102900000, guid: 101d0fa5d6e728847849429ad5319b9d, type: 3}
-    scenePath: Assets/Scenes/stage6.unity
+    sceneAsset: {fileID: 102900000, guid: 948ed39d30ddea849a8468bb05494af9, type: 3}
+    scenePath: Assets/Scenes/stage7.unity
   directionLight: {fileID: 1865931842}
   loadingUI: {fileID: 0}
   delayTime: 0
@@ -15274,7 +15274,7 @@ PrefabInstance:
       objectReference: {fileID: 1331197067}
     - target: {fileID: 2602671182047654487, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: moveSpeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2602671183851544069, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: audioSource
