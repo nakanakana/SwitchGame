@@ -151,7 +151,6 @@ public class Patrol : MonoBehaviour
             else 
             { 
                 tracking = false;
-                GotoNextPoint();
             }
         }
 
@@ -163,7 +162,6 @@ public class Patrol : MonoBehaviour
             if (distance > quitRange || angle > quitAngle || MoveControl.instance.hitEnemy)
             {
                 tracking = false;
-                GotoNextPoint();
             }
 
             //Player‚ð–Ú•W‚Æ‚·‚é
@@ -186,7 +184,6 @@ public class Patrol : MonoBehaviour
                 else 
                 { 
                     tracking = false;
-                    GotoNextPoint();
                 }
             }
 
