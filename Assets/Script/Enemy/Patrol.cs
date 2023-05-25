@@ -143,12 +143,16 @@ public class Patrol : MonoBehaviour
 
         if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
         {
-            if (/*hit.collider.CompareTag("Player") && */!MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
+            if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
             {
                 tracking = true;
 
             }
-            else tracking = false;
+            else 
+            { 
+                tracking = false;
+                GotoNextPoint();
+            }
         }
 
         if (tracking)
@@ -159,6 +163,7 @@ public class Patrol : MonoBehaviour
             if (distance > quitRange || angle > quitAngle || MoveControl.instance.hitEnemy)
             {
                 tracking = false;
+                GotoNextPoint();
             }
 
             //Playerを目標とする
@@ -173,12 +178,16 @@ public class Patrol : MonoBehaviour
             //PlayerがtrackingRangeより近づいたら追跡開始
             if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
             {
-                if (/*hit.collider.CompareTag("Player") && */!MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
+                if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
                 {
                     tracking = true;
 
                 }
-                else tracking = false;
+                else 
+                { 
+                    tracking = false;
+                    GotoNextPoint();
+                }
             }
 
             // エージェントが現目標地点に近づいてきたら、
@@ -189,9 +198,6 @@ public class Patrol : MonoBehaviour
             }
             animator.SetBool("Attack", false);
         }
-
-        if (!tracking) GotoNextPoint();
-
        
     }
     public void AlertCome(Transform alertpos)
