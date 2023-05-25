@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchObj : MonoBehaviour
 {
@@ -11,6 +12,16 @@ public class SwitchObj : MonoBehaviour
     bool IsClick;
 
     float Timer = 1.0f;
+
+    public float sensitivity = 1.0f; // マウスカーソルの感度
+
+    Ray ray;
+
+    Vector3 mousePosition;
+
+    TestUIRay testUIRay;
+
+
 
     //オブジェクトの位置を管理する配列
     //[SerializeField] Transform[] trans;
@@ -26,6 +37,13 @@ public class SwitchObj : MonoBehaviour
     //private Vector3 firstObjectPosition;
     //private Vector3 secondObjectPosition;
 
+    private Vector3 mousePosPre = Vector3.zero;
+
+    private Vector3 ConPosPre = Vector3.zero;
+
+    private float cursorTimer;
+   
+
     public void Awake()
     {
         if (instance == null)
@@ -40,21 +58,48 @@ public class SwitchObj : MonoBehaviour
         gameObject1 = GameObject.FindWithTag("Player");
         //firstObjectPosition = firstObject.transform.position;
         //secondObjectPosition = secondObject.transform.position;
+
+        
     }
 
     private void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        ;
+        if (MoveControl.instance.hitEnemy)
+        {
+            return;
+        }
 
+
+        var controllerNames = Input.GetJoystickNames();
+
+        Vector3 _imgRect = TestUIRay.instance._imgRect.position;
+        if(_imgRect != ConPosPre )
+        {
+            ray = Camera.main.ScreenPointToRay(TestUIRay.instance.GetUIScreenPos(TestUIRay.instance._imgRect));
+        }
+
+
+        Vector3 mousePos = Input.mousePosition;
+
+        //if (controllerNames[0] == "")
+        //{
+        //    //if(mousePos != mousePosPre)
+        //    //{
+        //        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    //}
+        //}
+
+
+        RaycastHit hit;
+        
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             Timer -= Time.deltaTime;
 
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown("joystick button 4"))
             {
                 gameObject2 = hit.collider.gameObject;
+
             }
         }
         if (gameObject2 != null)
@@ -131,7 +176,8 @@ public class SwitchObj : MonoBehaviour
         Debug.Log(clickcnt);*/
 
 
-    }
+    }//Update::END
+
     //public void OnclickBook(Book.COLOR color,Transform transform)
     //{
     //    //クリックされたらオブジェクトの位置を保存
@@ -173,6 +219,9 @@ public class SwitchObj : MonoBehaviour
         //firstObject.transform.position = secondObject.transform.position;
         //secondObject.transform.position = tmp;
     }
+
+
+
 
     //public void SwapArray()
     //{
