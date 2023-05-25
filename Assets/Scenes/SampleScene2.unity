@@ -898,15 +898,15 @@ MonoBehaviour:
   - {fileID: 485566509}
   - {fileID: 2052609165}
   destPoint: 0
-  trackingRange: 3
-  quitRange: 5
   tracking: 0
-  searchAngle: 100
-  ball: {fileID: 0}
-  ShotPosY: 0
   _sight_range: 0
   _sight_angle: 0
   mat: {fileID: 0}
+  quitRange: 5
+  quitAngle: 0
+  mat2: {fileID: 0}
+  ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &704542503
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1254,15 +1254,15 @@ MonoBehaviour:
   - {fileID: 485566509}
   - {fileID: 2052609165}
   destPoint: 0
-  trackingRange: 3
-  quitRange: 5
   tracking: 0
-  searchAngle: 100
-  ball: {fileID: 0}
-  ShotPosY: 0
   _sight_range: 0
   _sight_angle: 0
   mat: {fileID: 0}
+  quitRange: 5
+  quitAngle: 0
+  mat2: {fileID: 0}
+  ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!195 &843049095
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5210,15 +5210,15 @@ MonoBehaviour:
   - {fileID: 485566509}
   - {fileID: 2052609165}
   destPoint: 0
-  trackingRange: 3
-  quitRange: 5
   tracking: 0
-  searchAngle: 100
-  ball: {fileID: 0}
-  ShotPosY: 0
   _sight_range: 0
   _sight_angle: 0
   mat: {fileID: 0}
+  quitRange: 5
+  quitAngle: 0
+  mat2: {fileID: 0}
+  ball: {fileID: 0}
+  ShotPosY: 0
 --- !u!136 &2043056144
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5746,7 +5746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8899379893358936499, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8899379893358936499, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: m_LocalScale.x
@@ -5797,8 +5797,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
+      propertyPath: mat2
+      value: 
+      objectReference: {fileID: 2100000, guid: 3caa2ead33808d34ebd3f9be3d2a791b, type: 2}
+    - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
+      propertyPath: quitAngle
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: quitRange
-      value: 5
+      value: 14.8
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: searchAngle
@@ -5806,7 +5814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_angle
-      value: 32.8
+      value: 52.8
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_range
