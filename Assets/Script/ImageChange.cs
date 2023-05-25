@@ -7,7 +7,6 @@ public class ImageChange : MonoBehaviour
 {
     public Image image;
     private Sprite sprite;
-    public SceneChange sceneChange;
 
     // Start is called before the first frame update
     void Start()
@@ -17,21 +16,105 @@ public class ImageChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sceneChange.Count == 0)
+        if (SceneChange.instance.count == 0)
         {
             sprite = Resources.Load<Sprite>("0");
             image = this.GetComponent<Image>();
             image.sprite = sprite;
         }
-        else if (sceneChange.Count == 1)
+        else if (SceneChange.instance.count == 1)
         {
             sprite = Resources.Load<Sprite>("1");
             image = this.GetComponent<Image>();
             image.sprite = sprite;
         }
-        else if (sceneChange.Count == 2)
+        else if (SceneChange.instance.count == 2)
         {
             sprite = Resources.Load<Sprite>("2");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 3)
+        {
+            sprite = Resources.Load<Sprite>("3");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 4)
+        {
+            sprite = Resources.Load<Sprite>("4");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 5)
+        {
+            sprite = Resources.Load<Sprite>("5");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 6)
+        {
+            sprite = Resources.Load<Sprite>("6");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 7)
+        {
+            sprite = Resources.Load<Sprite>("7");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 8)
+        {
+            sprite = Resources.Load<Sprite>("8");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 9)
+        {
+            sprite = Resources.Load<Sprite>("9");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 10)
+        {
+            sprite = Resources.Load<Sprite>("0");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 11)
+        {
+            sprite = Resources.Load<Sprite>("1");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 12)
+        {
+            sprite = Resources.Load<Sprite>("2");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 13)
+        {
+            sprite = Resources.Load<Sprite>("3");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 14)
+        {
+            sprite = Resources.Load<Sprite>("4");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 15)
+        {
+            sprite = Resources.Load<Sprite>("5");
+            image = this.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+        else if (SceneChange.instance.count == 16)
+        {
+            sprite = Resources.Load<Sprite>("6");
             image = this.GetComponent<Image>();
             image.sprite = sprite;
         }
