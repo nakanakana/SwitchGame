@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 196723080563875434}
   - component: {fileID: 196723080563875433}
   - component: {fileID: 196723080563875432}
+  - component: {fileID: -6630296611473927465}
   m_Layer: 0
   m_Name: Gurdian_0
   m_TagString: Untagged
@@ -181,6 +182,20 @@ NavMeshAgent:
   m_BaseOffset: 0.2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &-6630296611473927465
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043585280288692898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1547073883736812648
 GameObject:
   m_ObjectHideFlags: 0
