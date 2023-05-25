@@ -24,11 +24,14 @@ public class SceneChange : MonoBehaviour
     [Header("ステージ遷移開始までの遅延時間")]
     [SerializeField]
     private float delayTime;
+
+
+    private AudioSource audioSource;
     // ロードを開始するメソッド
     public void StartLoad()
     {
 
-
+        
         StartCoroutine(LoadScene());
     }
     public static SceneChange instance;
@@ -45,6 +48,7 @@ public class SceneChange : MonoBehaviour
     private void Start()
     {
         directionLight.intensity = 1;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,7 +69,9 @@ public class SceneChange : MonoBehaviour
         if (ChangeFlag)
         {
             loadingUI.SetActive(true);
+            audioSource.Stop();
             delayTime -= Time.deltaTime;
+
 
             if (delayTime <= 0.0f)
             {
@@ -106,7 +112,7 @@ public class SceneChange : MonoBehaviour
         async = SceneManager.LoadSceneAsync(sceneToLoad);
        
         
-        while (true)
+        while (!async.isDone)
         {
             //async.allowSceneActivation = false;
             yield return null;
