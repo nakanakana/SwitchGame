@@ -24,7 +24,7 @@ public class EnemyCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Count);
+        //Debug.Log(Count);
     }
 
     // Update is called once per frame
