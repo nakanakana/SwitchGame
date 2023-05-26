@@ -226,6 +226,8 @@ public class TestUIRay : MonoBehaviour
     /// <returns></returns>
     private bool isMouseKeyboard()
     {
+     
+
         // マウスのボタン
         if (Event.current.isMouse)
         {
@@ -249,19 +251,23 @@ public class TestUIRay : MonoBehaviour
     {
         //ジョイスティック1のボタンをチェック
         // ※KeyCode.Joystick1Button19まである
-        for (int i = 0; i < 19; i++)
+        // for (int i = 0; i < 19; i++)
+        //{
+        //    //KeyCode tKeyCode = KeyCode.Joystick1Button0 + i;
+        //    //if (Input.GetKey(tKeyCode))
+        //    //{
+        //    //    return true;
+        //    //}
+        //}
+        float horizontalInput = Input.GetAxis(horizontalAxis);
+        //
+        //// コントローラーの垂直方向の入力値を取得
+        float verticalInput = Input.GetAxis(verticalAxis);
+        ////ジョイスティック入力
+        if (horizontalInput <= -1 || horizontalInput >=1||
+             verticalInput <= -1|| verticalInput >= 1)
         {
-            KeyCode tKeyCode = KeyCode.Joystick1Button0 + i;
-            if (Input.GetKey(tKeyCode))
-            {
-                return true;
-            }
-        }
-
-        //ジョイスティック入力
-        if (Mathf.Abs(Input.GetAxis(horizontalAxisString)) > Mathf.Epsilon ||
-            Mathf.Abs(Input.GetAxis(verticalAxisString)) > Mathf.Epsilon)
-        {
+           
             return true;
         }
         return false;
