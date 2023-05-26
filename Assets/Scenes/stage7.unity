@@ -8995,8 +8995,9 @@ GameObject:
   - component: {fileID: 2050390150}
   - component: {fileID: 2050390149}
   - component: {fileID: 2050390151}
+  - component: {fileID: 2050390152}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SceneChange&BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9132,6 +9133,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2050390152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050390148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de0fded48d016840be03ff7a0544c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2080092243 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6225345865559622823, guid: b2432241198e22a44ac14ab8f3b88078, type: 3}
