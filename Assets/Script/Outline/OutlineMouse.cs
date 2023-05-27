@@ -37,9 +37,11 @@ public class OutlineMouse : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             gameObject2 = hit.collider.gameObject;
+          
             if (gameObject2.CompareTag("Cube"))
             {
-                outline.enabled = true;
+                gameObject2.GetComponent<Outline>().enabled = true;
+              
             }
             else
             {
