@@ -126,7 +126,8 @@ public class Patrol : MonoBehaviour
             agent.speed = 0;
             return;
         }
-        
+        Vector3 rayP = transform.position;
+        rayP.y += 0.5f;
         //Playerとこのオブジェクトの距離を測る
         playerPos = player.transform.position;
         distance = Vector3.Distance(this.transform.position, playerPos);
@@ -139,19 +140,16 @@ public class Patrol : MonoBehaviour
         Vector3 temp = playerPos - transform.position;
         direction = temp.normalized;
         ray = new Ray(transform.position, direction);  // Rayを飛ばす
-        //Debug.DrawRay(ray.origin, ray.direction * _sight_range, Color.black);  // Rayをシーン上に描画
-
-        if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
+        //Debug.DrawRay(rayP, ray.direction * _sight_range, Color.black);  // Rayをシーン上に描画
+        
+        if (Physics.Raycast(rayP, ray.direction * _sight_range, out hit))
         {
-            if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
+            if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle < _sight_angle && distance < _sight_range)
             {
                 tracking = true;
 
             }
-            else 
-            { 
-                tracking = false;
-            }
+            
         }
 
         if (tracking)
@@ -174,17 +172,14 @@ public class Patrol : MonoBehaviour
         else
         {
             //PlayerがtrackingRangeより近づいたら追跡開始
-            if (Physics.Raycast(ray.origin, ray.direction * _sight_range, out hit))
+            if (Physics.Raycast(rayP, ray.direction * _sight_range, out hit))
             {
-                if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle <= _sight_angle && distance < _sight_range)
+                if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle < _sight_angle && distance < _sight_range)
                 {
                     tracking = true;
 
                 }
-                else 
-                { 
-                    tracking = false;
-                }
+                
             }
 
             // エージェントが現目標地点に近づいてきたら、
