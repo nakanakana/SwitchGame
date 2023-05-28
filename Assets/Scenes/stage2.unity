@@ -2404,7 +2404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 805172578676318498, guid: e26a207e25b67444d90539bc36e28aa1, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3577350910859233403, guid: e26a207e25b67444d90539bc36e28aa1, type: 3}
       propertyPath: m_Name
@@ -2412,15 +2412,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577350910859233403, guid: e26a207e25b67444d90539bc36e28aa1, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4868386282328255262, guid: e26a207e25b67444d90539bc36e28aa1, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5824381986611861766, guid: e26a207e25b67444d90539bc36e28aa1, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7957207205961078211, guid: e26a207e25b67444d90539bc36e28aa1, type: 3}
       propertyPath: Door
