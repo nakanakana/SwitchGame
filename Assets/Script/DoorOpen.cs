@@ -26,12 +26,12 @@ public class DoorOpen : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            //animator.ResetTrigger("DoorOpen");
-            animator.SetBool("Open", false);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Enemy"))
+    //    {
+    //        //animator.ResetTrigger("DoorOpen");
+    //        animator.SetBool("Open", false);
+    //    }
+    //}
 }

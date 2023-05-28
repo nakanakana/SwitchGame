@@ -130,7 +130,7 @@ public class Patrol : MonoBehaviour
         rayP.y += 0.5f;
         //Playerとこのオブジェクトの距離を測る
         playerPos = player.transform.position;
-        distance = Vector3.Distance(this.transform.position, playerPos);
+        distance = Vector3.Distance(transform.position, playerPos);
         //　主人公の方向
         var playerDirection = player.transform.position - transform.position;
         //　敵の前方からの主人公の方向
@@ -144,7 +144,7 @@ public class Patrol : MonoBehaviour
         
         if (Physics.Raycast(rayP, ray.direction * _sight_range, out hit))
         {
-            if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle < _sight_angle && distance < _sight_range)
+            if (hit.collider.gameObject.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle < _sight_angle && distance < _sight_range)
             {
                 tracking = true;
 
@@ -174,7 +174,7 @@ public class Patrol : MonoBehaviour
             //PlayerがtrackingRangeより近づいたら追跡開始
             if (Physics.Raycast(rayP, ray.direction * _sight_range, out hit))
             {
-                if (hit.collider.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle < _sight_angle && distance < _sight_range)
+                if (hit.collider.gameObject.CompareTag("Player") && !MoveControl.instance.hitEnemy && angle < _sight_angle && distance < _sight_range)
                 {
                     tracking = true;
 
