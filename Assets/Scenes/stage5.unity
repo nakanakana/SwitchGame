@@ -237,11 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_angle
-      value: 150
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_range
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: trackingRange
@@ -1057,11 +1057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_angle
-      value: 150
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_range
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: trackingRange
@@ -1975,11 +1975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_angle
-      value: 150
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_range
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: trackingRange
@@ -10737,11 +10737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_angle
-      value: 140
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: _sight_range
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8938039567810988603, guid: e43bb2fd7c53eff46ae0101bc39a93db, type: 3}
       propertyPath: trackingRange
