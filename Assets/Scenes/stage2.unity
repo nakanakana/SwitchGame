@@ -9022,7 +9022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19406b489f6be7b4cacfe303b7962f11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fc0280fc6e935d4798cdba1f3e31e4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9323,7 +9323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 800, y: 380}
+  m_AnchoredPosition: {x: 809.8, y: 380}
   m_SizeDelta: {x: 36, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119340610
@@ -9359,7 +9359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19406b489f6be7b4cacfe303b7962f11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fc0280fc6e935d4798cdba1f3e31e4f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16066,7 +16066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe025df391bfad4898d5256b17f2dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 9
+  count: 7
   sceneToLoad:
     sceneAsset: {fileID: 102900000, guid: 2ae59e9fb3b57e04f8135a2bd57bc634, type: 3}
     scenePath: Assets/Scenes/stage3.unity

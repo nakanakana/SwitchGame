@@ -5213,7 +5213,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95b1892bac53d734aa89de9eb980a68b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 586b792986d2da747a6e8ddc964999ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10400,7 +10400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe025df391bfad4898d5256b17f2dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 12
+  count: 11
   sceneToLoad:
     sceneAsset: {fileID: 102900000, guid: 948ed39d30ddea849a8468bb05494af9, type: 3}
     scenePath: Assets/Scenes/stage7.unity
@@ -12926,7 +12926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95b1892bac53d734aa89de9eb980a68b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 586b792986d2da747a6e8ddc964999ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
