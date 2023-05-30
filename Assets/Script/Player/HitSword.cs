@@ -17,7 +17,7 @@ public class HitSword : MonoBehaviour
             Instantiate(particleObject, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject, 0.4f);
             audioSource.Play();
-            SceneChange.instance.SubEnemyCount();
+            //SceneChange.instance.SubEnemyCount();
         }
     }
 

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     // Start is called before the first frame update
+    GameObject[] tagObjects;
+
+    float timer = 0.0f;
+    float interval = 2.0f;
 
     [SerializeField]
     public int count;
@@ -80,6 +84,12 @@ public class SceneChange : MonoBehaviour
             }
         }
 
+        timer += Time.deltaTime;
+        if(timer>interval)
+        {
+            Check("Enemy");
+            timer = 0;
+        }
     }
 
     public void SubEnemyCount()
@@ -156,4 +166,9 @@ public class SceneChange : MonoBehaviour
         }
     }
 
+    void Check(string tagname)
+    {
+        tagObjects = GameObject.FindGameObjectsWithTag(tagname);
+        count = tagObjects.Length;
+    }
 }
