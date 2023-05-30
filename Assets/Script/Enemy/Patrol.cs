@@ -196,15 +196,15 @@ public class Patrol : MonoBehaviour
     {
         agent.destination = alertpos.position;
         agent.speed = 4.0f;
-        if (distance < _sight_range)
-            tracking = true;
+        //if (distance < _sight_range)
+        //    tracking = true;
         if (agent.destination == alertpos.position && tracking == false) { GotoNextPoint(); }
     }
 
     public void Return()
     {
-        if (distance < _sight_range)
-            tracking = true;
+        //if (distance < _sight_range)
+        //    tracking = true;
         if (!tracking) GotoNextPoint();
     }
 

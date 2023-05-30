@@ -7079,7 +7079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2602671182047654487, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: moveSpeed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2602671183851544069, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: audioSource
@@ -10580,7 +10580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe025df391bfad4898d5256b17f2dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 12
+  count: 13
   sceneToLoad:
     sceneAsset: {fileID: 102900000, guid: 8bed7a0821958f84889d4af7e3c99d9c, type: 3}
     scenePath: Assets/Scenes/GameClear.unity
@@ -19783,7 +19783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95b1892bac53d734aa89de9eb980a68b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49acfdbd36c7bcd4a8990e9efdf5347a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24616,7 +24616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95b1892bac53d734aa89de9eb980a68b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49acfdbd36c7bcd4a8990e9efdf5347a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
