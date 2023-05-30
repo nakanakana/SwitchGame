@@ -10902,6 +10902,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1354030080}
+    - target: {fileID: 2602671182047654487, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2602671183851544069, guid: 235db6026d5195c4a830c73c16ab3d8e, type: 3}
       propertyPath: audioSource
       value: 
