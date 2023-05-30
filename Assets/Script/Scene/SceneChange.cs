@@ -32,7 +32,7 @@ public class SceneChange : MonoBehaviour
     {
 
         
-        StartCoroutine(LoadScene());
+       // StartCoroutine(LoadScene());
     }
     public static SceneChange instance;
 
@@ -75,7 +75,8 @@ public class SceneChange : MonoBehaviour
 
             if (delayTime <= 0.0f)
             {
-                Change();
+                // Change();
+                Load();
             }
         }
 
@@ -110,8 +111,8 @@ public class SceneChange : MonoBehaviour
         
         // シーンを非同期でロードする
         async = SceneManager.LoadSceneAsync(sceneToLoad);
-       
-        
+       // SceneManager.LoadScene(sceneToLoad);
+
         while (!async.isDone)
         {
             //async.allowSceneActivation = false;
@@ -139,7 +140,10 @@ public class SceneChange : MonoBehaviour
         
     }
 
-
+    void Load()
+    {
+        SceneManager.LoadScene(sceneToLoad);
+    }
     public bool ChangeFlag
     {
         set
