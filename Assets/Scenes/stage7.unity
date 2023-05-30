@@ -9519,7 +9519,7 @@ MonoBehaviour:
     scenePath: Assets/Scenes/stage6.unity
   directionLight: {fileID: 1219563907}
   loadingUI: {fileID: 559654611}
-  delayTime: 2
+  delayTime: 5
   changeFlag: 0
 --- !u!4 &2050390150
 Transform:

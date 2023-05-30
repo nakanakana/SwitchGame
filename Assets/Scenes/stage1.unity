@@ -5111,6 +5111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4656378980763859134, guid: f916265751b0ad94f8f2829475079041, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4656378980769792400, guid: f916265751b0ad94f8f2829475079041, type: 3}
       propertyPath: m_Name
       value: Loading
@@ -5555,7 +5559,7 @@ MonoBehaviour:
     scenePath: Assets/Scenes/stage2.unity
   directionLight: {fileID: 102393265}
   loadingUI: {fileID: 1929315335}
-  delayTime: 2
+  delayTime: 5
   changeFlag: 0
 --- !u!4 &1865290813
 Transform:

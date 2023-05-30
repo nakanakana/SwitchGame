@@ -10586,7 +10586,7 @@ MonoBehaviour:
     scenePath: Assets/Scenes/GameClear.unity
   directionLight: {fileID: 108207714}
   loadingUI: {fileID: 1341016934}
-  delayTime: 2
+  delayTime: 5
   changeFlag: 0
 --- !u!4 &755099250
 Transform:
